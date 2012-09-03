@@ -1,0 +1,12 @@
+{
+	"level1":{
+		"bestTime":60,
+		"bestScore":1000,
+		"totalTimePlayed":1200
+	},
+	"level2":{
+		"bestTime":200,
+		"bestScore":800,
+		"totalTimePlayed":3000
+	}
+}

@@ -2,17 +2,10 @@ package drawable;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class Drawable{
+public abstract class Drawable{
 	
-	public Drawable(){
-
-	}
+	public abstract void render(SpriteBatch spriteBatch);
 	
-	public void render(SpriteBatch spriteBatch) {
-
-	}
+	public abstract void update(float deltaTime);
 	
-	public void update(float deltaTime) {
-
-	}
 }

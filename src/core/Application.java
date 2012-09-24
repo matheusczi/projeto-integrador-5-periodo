@@ -12,7 +12,6 @@ public class Application implements ApplicationListener{
 	
 	public void create() {
 		spriteBatch = new SpriteBatch();
-		
 		canvasController = new CanvasController(this);
 	}
 	
@@ -20,7 +19,7 @@ public class Application implements ApplicationListener{
 		canvasController.getCanvas().update(Gdx.graphics.getDeltaTime());
 		spriteBatch.begin();
 		canvasController.getCanvas().render(spriteBatch);
-		spriteBatch.end();		
+		spriteBatch.end();
 	}
 	
 	public void resize(int width, int height) {

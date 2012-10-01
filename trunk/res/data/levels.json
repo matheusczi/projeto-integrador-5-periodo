@@ -1,63 +1,48 @@
 {
 	"level":{
 		"name":"level1",
-		"time-limit":3600, //poderia ser uma boa
 		"tiles":{
-			"ground":"res/png_files/tiles/path_to_ground.png",
-			"wall":"res/png_files/tiles/path_to_wall.png",
-			"water":"res/png_files/tiles/path_to_water.png",
-			"start":"res/png_files/tiles/path_to_start.png",
-			"block":"res/png_files/tiles/path_to_block.png",
-			"target":"res/png_files/tiles/path_to_target.png"
-		},
-		"sounds":{
-			"background":"/res/sound_files/path_to_bg_sound.mp3/wav/ogg(sei la)",
-			"pushing":"/res/sound_files/path_to_push_sound.format",
-			"hit-target":"/res/sound_files/path_to_hittarget_sound.format",
-			"level-complete":"/res/sound_files/path_to_levelcomplete_sound.format"
+			"ground":"res/image_files/tiles/path_to_ground.png",
+			"wall":"res/image_files/tiles/path_to_wall.png",
+			"water":"res/image_files/tiles/path_to_water.png",
+			"start":"res/image_files/tiles/path_to_start.png",
+			"block":"res/image_files/tiles/path_to_block.png",
+			"target":"res/image_files/tiles/path_to_target.png"
 		},
 		"grid":{
 			"rows":6,
 			"columns":6,
 			"map":[
-				//comentario didatico, nao existem comentarios
-				//em json, remover antes de utilizar arquivo
-				// row 1
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				// row 2
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":true, "walkable":true},
 				{"tile":"ground", "hasBlock":true, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":true, "walkable":true},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				// row 3
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":true, "isBlockTarget":false, "walkable":true},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				// row 4
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"start", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				// row 5
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				// row 6
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},

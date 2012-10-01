@@ -1,7 +1,7 @@
 package persistence;
 
 public class ProgressLevelData{
-	int bestTime;
-	int bestScore;
-	int totalTimePlayed;
+	public int bestTime;
+	public int bestScore;
+	public int totalTimePlayed;
 }

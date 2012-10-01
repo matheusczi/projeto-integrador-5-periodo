@@ -1,6 +1,7 @@
 package persistence;
 
 import java.util.LinkedHashMap;
+import java.util.Set;
 
 public class ProgressData {
 	private LinkedHashMap<String, ProgressLevelData> data;
@@ -33,5 +34,9 @@ public class ProgressData {
 	
 	public ProgressLevelData removeEntry(String id){
 		return data.remove(id);
+	}
+	
+	public Set<String> getKeySet(){
+		return data.keySet();
 	}
 }

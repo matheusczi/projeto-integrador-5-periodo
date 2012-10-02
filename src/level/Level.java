@@ -6,35 +6,29 @@ public class Level {
 	private int rows;
 	private int columns;
 	private String name;
+	private Cell[][] grid;
 	
-	public Level(){
-		rows = 0;
-		columns = 0;
-		name = "";
+	public Level(int rows, int columns, String name){
+		this.rows = rows;
+		this.columns = columns;
+		this.name = name;
+		this.grid = new Cell[rows][columns];
 	}
 
+	public void setCell(int x, int y, Cell c){
+		this.grid[x][y] = c;
+	}
+	
 	public int getRows() {
 		return rows;
-	}
-
-	public void setRows(int rows) {
-		this.rows = rows;
 	}
 
 	public int getColumns() {
 		return columns;
 	}
 
-	public void setColumns(int columns) {
-		this.columns = columns;
-	}
-
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-	
 }

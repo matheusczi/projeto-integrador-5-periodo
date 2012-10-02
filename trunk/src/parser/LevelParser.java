@@ -7,6 +7,7 @@ import json.JSONArray;
 import json.JSONException;
 import json.JSONObject;
 import json.JSONTokener;
+import level.Cell;
 import level.Level;
 
 public class LevelParser {
@@ -29,12 +30,27 @@ public class LevelParser {
 				if(key!=id)
 					continue;
 				
+				//assets stuff
+				
+				
+				//grid and map stuff
 				jsonLevel = object.getJSONObject(key);
-				
-				level = new Level();
-				level.setName(jsonLevel.getString("name"));
-				
-
+				JSONObject grid = jsonLevel.getJSONObject("grid");
+				int rows = grid.getInt("rows");
+				int columns = grid.getInt("columns");
+				level = new Level(rows, columns, jsonLevel.getString("name"));
+				JSONArray map = grid.getJSONArray("map");
+				JSONObject jcell = null;
+				Cell cell = null;
+				for(int j=0; j < map.length(); j++){
+					jcell = map.getJSONObject(j);
+					cell = new Cell(jcell.getString("tile"),
+							jcell.getBoolean("hasBlock"),
+							jcell.getBoolean("isBlockTarget"),
+							jcell.getBoolean("walkable"));
+					
+					level.setCell(j%rows, (int) Math.floor(j/rows), cell);
+				}
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

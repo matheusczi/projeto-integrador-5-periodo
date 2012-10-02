@@ -1,6 +1,6 @@
 package canvas;
 
-import core.Application;
+import com.badlogic.gdx.Gdx;
 
 public class CanvasController{
 	public static final String CANVAS_SPLASH = "Canvas Splash";
@@ -9,29 +9,28 @@ public class CanvasController{
 	public static final String CANVAS_PROGRESS = "Canvas Progress";
 	public static final String CANVAS_GAME = "Canvas Game";
 	
-	private Canvas activeCanvas;
+	private CanvasBase activeCanvas;
 	private CanvasSplash canvasSplash;
 	private CanvasMenu canvasMenu;
 	private CanvasOptions canvasOptions;
 	private CanvasProgress canvasProgress;
 	private CanvasGame canvasGame;
 	
-	public CanvasController(Application application){
-		if(application != null){
-			canvasSplash = new CanvasSplash(application);
-			canvasMenu = new CanvasMenu(application);
-			canvasOptions = new CanvasOptions(application);
-			canvasProgress = new CanvasProgress(application);
-			canvasGame = new CanvasGame(application);
-			activeCanvas = canvasSplash;
-		}
+	public CanvasController(){
+		canvasSplash = new CanvasSplash(this);
+		canvasMenu = new CanvasMenu(this);
+		canvasOptions = new CanvasOptions(this);
+		canvasProgress = new CanvasProgress(this);
+		canvasGame = new CanvasGame(this);
+		activeCanvas = canvasSplash;
 	}
 	
-	public Canvas getCanvas() {
+	public CanvasBase getCanvas() {
+		Gdx.input.setInputProcessor(activeCanvas);
 		return activeCanvas;
 	}
 	
-	public Canvas setCanvasByName(String name) {
+	public CanvasBase setCanvasByName(String name) {
 		if(name == CANVAS_SPLASH){
 			activeCanvas = canvasSplash;
 		}else if(name == CANVAS_MENU){

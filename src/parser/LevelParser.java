@@ -30,11 +30,12 @@ public class LevelParser {
 				if(key!=id)
 					continue;
 				
+				jsonLevel = object.getJSONObject(key);
 				//assets stuff
 				
 				
 				//grid and map stuff
-				jsonLevel = object.getJSONObject(key);
+				
 				JSONObject grid = jsonLevel.getJSONObject("grid");
 				int rows = grid.getInt("rows");
 				int columns = grid.getInt("columns");

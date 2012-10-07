@@ -2,6 +2,11 @@ package parser;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.Iterator;
+
+import com.badlogic.gdx.graphics.Texture;
+
+import utils.CommonResources;
 
 import json.JSONArray;
 import json.JSONException;
@@ -32,7 +37,15 @@ public class LevelParser {
 				
 				jsonLevel = object.getJSONObject(key);
 				//assets stuff
+				JSONObject assets = jsonLevel.getJSONObject("assets");
+				JSONArray assets_keys = assets.names();
+				CommonResources cr = CommonResources.getInstance();
 				
+				if(assets_keys != null){
+					for(int k = 0; k < assets_keys.length(); k++){
+						cr.assets.put(assets_keys.getString(k), new Texture(assets.getString(assets_keys.getString(k))));
+					}
+				}
 				
 				//grid and map stuff
 				

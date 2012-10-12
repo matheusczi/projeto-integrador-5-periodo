@@ -25,12 +25,12 @@ public class CanvasController{
 		activeCanvas = canvasSplash;
 	}
 	
-	public CanvasBase getCanvas() {
+	public CanvasBase getCanvas(){
 		Gdx.input.setInputProcessor(activeCanvas);
 		return activeCanvas;
 	}
 	
-	public CanvasBase setCanvasByName(String name) {
+	public CanvasBase setCanvasByName(String name){
 		if(name == CANVAS_SPLASH){
 			activeCanvas = canvasSplash;
 		}else if(name == CANVAS_MENU){
@@ -43,5 +43,13 @@ public class CanvasController{
 			activeCanvas = canvasGame;
 		}
 		return activeCanvas;
+	}
+	
+	public void dispose(){
+		canvasSplash.dispose();
+		canvasMenu.dispose();
+		canvasOptions.dispose();
+		canvasProgress.dispose();
+		canvasGame.dispose();
 	}
 }

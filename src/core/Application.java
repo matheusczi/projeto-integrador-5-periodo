@@ -37,6 +37,6 @@ public class Application implements ApplicationListener{
 	}
 	
 	public void dispose() {
-		canvasController.getCanvas().dispose();
+		canvasController.dispose();
 	}
 }

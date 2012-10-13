@@ -1,13 +1,12 @@
 {
-	"level":{
-		"name":"level1",
+	"level1":{
 		"tiles":{
-			"ground":"res/image_files/tiles/path_to_ground.png",
-			"wall":"res/image_files/tiles/path_to_wall.png",
-			"water":"res/image_files/tiles/path_to_water.png",
-			"start":"res/image_files/tiles/path_to_start.png",
-			"block":"res/image_files/tiles/path_to_block.png",
-			"target":"res/image_files/tiles/path_to_target.png"
+			"ground":"res/image_files/ground_01.png",
+			"wall":"res/image_files/ground_02.png",
+			"water":"res/image_files/ground_03.png",
+			"start":"res/image_files/ground_04.png",
+			"block":"res/image_files/ground_05.png",
+			"target":"res/image_files/ground_06.png"
 		},
 		"grid":{
 			"rows":6,

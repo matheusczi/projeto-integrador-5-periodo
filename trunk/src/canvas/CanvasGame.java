@@ -2,6 +2,8 @@ package canvas;
 
 import java.util.ArrayList;
 
+import level.Level;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.audio.Music;
@@ -15,6 +17,10 @@ public class CanvasGame extends CanvasBase{
 	private ArrayList<CharacterBase> drawables;
 	private ArrayList<Music> musics;
 	private ArrayList<Sound> audioEffects;
+	private Level level = null;
+	
+	//this is not intended to be a singleton
+	private static CanvasGame instance = null;
 	
 	Texture texture;
 	
@@ -34,10 +40,21 @@ public class CanvasGame extends CanvasBase{
 		Sound sound = Gdx.audio.newSound(Gdx.files.internal("res/sound_files/Instrumentos.wav"));
 		audioEffects.add(sound);
 		sound.play();
+		instance = this;
+	}
+	
+	public static CanvasGame getInstance(){
+		return instance;
+	}
+	
+	public void setLevel(Level lvl){
+		this.level = lvl;
 	}
 	
 	@Override
 	public void render(SpriteBatch spriteBatch) {
+		level.draw(spriteBatch);
+		
 		spriteBatch.draw(texture, 10, 10);
 		
 		for(CharacterBase drawable : drawables){

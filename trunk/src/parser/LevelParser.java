@@ -32,12 +32,12 @@ public class LevelParser {
 			for(int i = 0; i < length; i++){
 				key = objectKeys.getString(i);
 				
-				if(key!=id)
+				if(!key.equals(id))
 					continue;
 				
 				jsonLevel = object.getJSONObject(key);
 				//assets stuff
-				JSONObject assets = jsonLevel.getJSONObject("assets");
+				JSONObject assets = jsonLevel.getJSONObject("tiles");
 				JSONArray assets_keys = assets.names();
 				CommonResources cr = CommonResources.getInstance();
 				
@@ -52,7 +52,7 @@ public class LevelParser {
 				JSONObject grid = jsonLevel.getJSONObject("grid");
 				int rows = grid.getInt("rows");
 				int columns = grid.getInt("columns");
-				level = new Level(rows, columns, jsonLevel.getString("name"));
+				level = new Level(rows, columns, key);
 				JSONArray map = grid.getJSONArray("map");
 				JSONObject jcell = null;
 				Cell cell = null;
@@ -74,6 +74,6 @@ public class LevelParser {
 			e.printStackTrace();
 		}
 		
-		return null;
+		return level;
 	}
 }

@@ -1,16 +1,19 @@
 {
 	"level1":{
 		"tiles":{
-			"ground":"res/image_files/ground_01.png",
-			"wall":"res/image_files/ground_02.png",
+			"ground":"res/image_files/ground_07.png",
+			"wall":"res/image_files/ground_09.png",
 			"water":"res/image_files/ground_03.png",
 			"start":"res/image_files/ground_04.png",
 			"block":"res/image_files/ground_05.png",
-			"target":"res/image_files/ground_06.png"
+			"target":"res/image_files/red_dot.png"
 		},
 		"grid":{
 			"rows":6,
 			"columns":6,
+			"block":"block",
+			"target":"target",
+			"startPosition":{"x":2, "y":2},
 			"map":[
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},

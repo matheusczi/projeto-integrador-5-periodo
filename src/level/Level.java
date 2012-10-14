@@ -79,7 +79,10 @@ public class Level {
 				Cell c = grid[i][j];
 				Texture t = res.assets.get(c.tile);
 				dest_x = grid_offset_x + (i * (cell_width));
-				dest_y = grid_offset_y + (j * (cell_height));
+				// inverted y axis minus offset from screen center minus height minus magic number from
+				// power of two textures 
+				// XXX - don`t do this at home
+				dest_y = Main.height-grid_offset_y - (j * (cell_height)) - 64;
 				spriteBatch.draw(t, dest_x, dest_y);
 				if(c.isBlockTarget){
 					spriteBatch.draw(res.assets.get(target.tile), dest_x, dest_y);

@@ -1,4 +1,4 @@
-package character;
+package objects;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;

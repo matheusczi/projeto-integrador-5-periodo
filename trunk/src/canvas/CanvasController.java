@@ -30,6 +30,10 @@ public class CanvasController{
 		return activeCanvas;
 	}
 	
+	public CanvasGame getCanvasGame(){
+		return canvasGame;
+	}
+	
 	public CanvasBase setCanvasByName(String name){
 		if(name == CANVAS_SPLASH){
 			activeCanvas = canvasSplash;

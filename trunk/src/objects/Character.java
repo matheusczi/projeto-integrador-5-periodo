@@ -1,45 +1,46 @@
-package character;
+package objects;
+
+import java.awt.Rectangle;
+
+import objects.ObjectBase;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import character.CharacterBase;
-
-public class Character extends CharacterBase{
+public class Character extends ObjectBase{
 	protected Texture texture;
 	
 	protected int speedX;
 	protected int speedY;
 	
 	public Character(){
-		X = 0;
-		Y = 0;
+		bounds = new Rectangle();
 		
 		speedX = 100;
 		speedY = 100;
 	}
 	
 	@Override
-	public void render(SpriteBatch spriteBatch) {
-
+	public void render(SpriteBatch spriteBatch){
+		
 	}
 	
 	@Override
-	public void update(float deltaTime) {
+	public void update(float deltaTime){
 		if(Gdx.input.isKeyPressed(Keys.DPAD_LEFT))
-			X -= deltaTime * speedX;
+			bounds.x -= deltaTime * speedX;
 		if(Gdx.input.isKeyPressed(Keys.DPAD_RIGHT))
-			X += deltaTime * speedX;
+			bounds.x += deltaTime * speedX;
 		if(Gdx.input.isKeyPressed(Keys.DPAD_UP))
-			Y += deltaTime * speedY;
+			bounds.y += deltaTime * speedY;
 		if(Gdx.input.isKeyPressed(Keys.DPAD_DOWN))
-			Y -= deltaTime * speedY;
+			bounds.y -= deltaTime * speedY;
 	}
 	
 	@Override
-	public void dispose() {
+	public void dispose(){
 		if(texture != null){
 			texture.dispose();
 		}

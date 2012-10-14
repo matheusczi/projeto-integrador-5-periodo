@@ -17,7 +17,7 @@ public class Cell {
 		this.hasBlock = hasBlock;
 		this.isBlockTarget = isBlockTarget;
 		this.isWalkable = isWalkable;
-		this.texture = texture;
+		//this.texture = texture;
 	}
 	
 	public Cell(){

@@ -1,7 +1,5 @@
 package level;
 
-import java.util.ArrayList;
-
 import utils.CommonResources;
 
 import com.badlogic.gdx.graphics.Texture;

@@ -13,67 +13,67 @@ public class CanvasBase implements InputProcessor{
 		this.controller = controller;
 	}
 	
-	public void render(SpriteBatch spriteBatch) {
+	public void render(SpriteBatch spriteBatch){
 
 	}
 	
-	public void update(float deltaTime) {
+	public void update(float deltaTime){
 
 	}
 	
-	public void resize(int width, int height) {
+	public void resize(int width, int height){
 
 	}
 	
-	public void pause() {
+	public void pause(){
 
 	}
 	
-	public void resume() {
+	public void resume(){
 
 	}
 	
-	public void dispose() {
+	public void dispose(){
 
 	}
 	
 	@Override
-	public boolean keyDown(int keycode) {
+	public boolean keyDown(int keycode){
 		return false;
 	}
 	
 	@Override
-	public boolean keyTyped(char character) {
+	public boolean keyTyped(char character){
 		return false;
 	}
 	
 	@Override
-	public boolean keyUp(int keycode) {
+	public boolean keyUp(int keycode){
 		return false;
 	}
 	
 	@Override
-	public boolean scrolled(int amount) {
+	public boolean scrolled(int amount){
 		return false;
 	}
 	
 	@Override
-	public boolean touchDown(int x, int y, int pointer, int button) {
+	public boolean touchDown(int x, int y, int pointer, int button){
 		return false;
 	}
 	
 	@Override
-	public boolean touchDragged(int x, int y, int pointer) {
+	public boolean touchDragged(int x, int y, int pointer){
 		return false;
 	}
 	
 	@Override
-	public boolean touchMoved(int x, int y) {
+	public boolean touchMoved(int x, int y){
 		return false;
 	}
 	
 	@Override
-	public boolean touchUp(int x, int y, int pointer, int button) {
+	public boolean touchUp(int x, int y, int pointer, int button){
 		return false;
 	}
 }

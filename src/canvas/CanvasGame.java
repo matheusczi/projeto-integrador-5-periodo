@@ -4,78 +4,62 @@ import java.util.ArrayList;
 
 import level.Level;
 
+import objects.ObjectBase;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import character.CharacterBase;
-
 public class CanvasGame extends CanvasBase{
-	private ArrayList<CharacterBase> drawables;
+	private ArrayList<ObjectBase> drawables;
 	private ArrayList<Music> musics;
 	private ArrayList<Sound> audioEffects;
 	private Level level = null;
 	
-	//this is not intended to be a singleton
-	private static CanvasGame instance = null;
-	
-	Texture texture;
-	
 	public CanvasGame(CanvasController controller){
 		super(controller);
-		drawables = new ArrayList<CharacterBase>();
+		drawables = new ArrayList<ObjectBase>();
 		musics = new ArrayList<Music>();
 		audioEffects = new ArrayList<Sound>();
 		
-		texture = new Texture(Gdx.files.internal("res/image_files/hero.png"));
+		// Music music = Gdx.audio.newMusic(Gdx.files.internal("res/sound_files/Enya - Carribean Blue.mp3"));
+		// musics.add(music);
+		// music.setLooping(true);
+		// music.play();
 		
-		Music music = Gdx.audio.newMusic(Gdx.files.internal("res/sound_files/Enya - Carribean Blue.mp3"));
-		musics.add(music);
-		music.setLooping(true);
-		music.play();
-		
-		Sound sound = Gdx.audio.newSound(Gdx.files.internal("res/sound_files/Instrumentos.wav"));
-		audioEffects.add(sound);
-		sound.play();
-		instance = this;
+		// Sound sound = Gdx.audio.newSound(Gdx.files.internal("res/sound_files/Instrumentos.wav"));
+		// audioEffects.add(sound);
+		// sound.play();
 	}
 	
-	public static CanvasGame getInstance(){
-		return instance;
-	}
-	
-	public void setLevel(Level lvl){
-		this.level = lvl;
+	public void setLevel(Level level){
+		this.level = level;
 	}
 	
 	@Override
-	public void render(SpriteBatch spriteBatch) {
-		level.draw(spriteBatch);
+	public void render(SpriteBatch spriteBatch){
+		if(level != null){
+			level.draw(spriteBatch);
+		}
 		
-		spriteBatch.draw(texture, 10, 10);
-		
-		for(CharacterBase drawable : drawables){
+		for(ObjectBase drawable : drawables){
 			drawable.render(spriteBatch);
 		}
 	}
 	
 	@Override
-	public void update(float deltaTime) {
-		for(CharacterBase drawable : drawables){
-			drawable.update(deltaTime);
+	public void update(float deltaTime){
+		for(ObjectBase drawable : drawables){
+			ObjectBase temporaryDrawable = drawable;
+			temporaryDrawable.update(deltaTime);
 		}
 	}
 	
 	@Override
-	public void dispose() {
-		if(texture != null){
-			texture.dispose();
-		}
-		
-		for(CharacterBase drawable : drawables){
+	public void dispose(){
+		for(ObjectBase drawable : drawables){
 			drawable.dispose();
 		}
 		
@@ -93,11 +77,27 @@ public class CanvasGame extends CanvasBase{
 	}
 	
 	@Override
-	public boolean keyTyped(char character) {
+	public boolean keyTyped(char character){
 		if(Gdx.input.isKeyPressed(Keys.ENTER)){
 			System.out.println("CanvasGame Enter");
 			controller.setCanvasByName(CanvasController.CANVAS_PROGRESS);
 		}
 		return super.keyTyped(character);
+	}
+	
+	@Override
+	public boolean touchDown(int x, int y, int pointer, int button){
+		for(ObjectBase drawable : drawables){
+			drawable.touchDown(x, y, pointer, button);
+		}
+		return super.touchDown(x, y, pointer, button);
+	}
+	
+	@Override
+	public boolean touchMoved(int x, int y){
+		for(ObjectBase drawable : drawables){
+			drawable.touchMove(x, y);
+		}
+		return super.touchMoved(x, y);
 	}
 }

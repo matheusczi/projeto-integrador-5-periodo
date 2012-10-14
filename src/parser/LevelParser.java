@@ -2,7 +2,6 @@ package parser;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.Iterator;
 
 import com.badlogic.gdx.graphics.Texture;
 

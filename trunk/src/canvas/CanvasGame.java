@@ -24,10 +24,14 @@ public class CanvasGame extends CanvasBase{
 		musics = new ArrayList<Music>();
 		audioEffects = new ArrayList<Sound>();
 		
+<<<<<<< .mine
+		texture = new Texture("res/image_files/hero.png");
+=======
 		// Music music = Gdx.audio.newMusic(Gdx.files.internal("res/sound_files/Enya - Carribean Blue.mp3"));
 		// musics.add(music);
 		// music.setLooping(true);
 		// music.play();
+>>>>>>> .r26
 		
 		// Sound sound = Gdx.audio.newSound(Gdx.files.internal("res/sound_files/Instrumentos.wav"));
 		// audioEffects.add(sound);

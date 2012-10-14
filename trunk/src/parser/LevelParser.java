@@ -52,6 +52,14 @@ public class LevelParser {
 				int rows = grid.getInt("rows");
 				int columns = grid.getInt("columns");
 				level = new Level(rows, columns, key);
+				Cell block = null;
+				block = new Cell(grid.getString("block"), true, false, false);
+				level.setBlock(block);
+				Cell target = null;
+				target = new Cell(grid.getString("target"), false, false, false);
+				level.setTarget(target);
+				JSONObject startPosition = grid.getJSONObject("startPosition");
+				level.setStartPosition(startPosition.getInt("x"), startPosition.getInt("y"));
 				JSONArray map = grid.getJSONArray("map");
 				JSONObject jcell = null;
 				Cell cell = null;
@@ -61,7 +69,7 @@ public class LevelParser {
 							jcell.getBoolean("hasBlock"),
 							jcell.getBoolean("isBlockTarget"),
 							jcell.getBoolean("walkable"));
-					
+//					System.out.println("x: "+j%rows+" y: "+(int)Math.floor(j/rows));
 					level.setCell(j%rows, (int) Math.floor(j/rows), cell);
 				}
 			}

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import level.Level;
 
 import objects.ObjectBase;
+import objects.Character;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
@@ -18,14 +19,16 @@ public class CanvasGame extends CanvasBase{
 	private ArrayList<Sound> audioEffects;
 	private Level level = null;
 	
+	private Character hero = null;
+	
 	public CanvasGame(CanvasController controller){
 		super(controller);
 		drawables = new ArrayList<ObjectBase>();
 		musics = new ArrayList<Music>();
 		audioEffects = new ArrayList<Sound>();
 		
-//		texture = new Texture("res/image_files/hero.png");
-
+		// texture = new Texture("res/image_files/hero.png");
+		
 		// Music music = Gdx.audio.newMusic(Gdx.files.internal("res/sound_files/Enya - Carribean Blue.mp3"));
 		// musics.add(music);
 		// music.setLooping(true);
@@ -81,10 +84,15 @@ public class CanvasGame extends CanvasBase{
 	
 	@Override
 	public boolean keyTyped(char character){
+		for(ObjectBase drawable : drawables){
+			drawable.keyTyped(character);
+		}
+		
 		if(Gdx.input.isKeyPressed(Keys.ENTER)){
 			System.out.println("CanvasGame Enter");
 			controller.setCanvasByName(CanvasController.CANVAS_PROGRESS);
 		}
+		
 		return super.keyTyped(character);
 	}
 	
@@ -102,5 +110,13 @@ public class CanvasGame extends CanvasBase{
 			drawable.touchMove(x, y);
 		}
 		return super.touchMoved(x, y);
+	}
+	
+	public Character getHero(){
+		if(hero == null){
+			hero = new Character();
+			drawables.add(hero);
+		}
+		return hero;
 	}
 }

@@ -11,6 +11,14 @@ public abstract class ObjectBase{
 	
 	public abstract void update(float deltaTime);
 	
+	public void dispose(){
+
+	}
+	
+	public void keyTyped(char character){
+
+	}
+	
 	public void touchDown(int x, int y, int pointer, int button){
 
 	}
@@ -18,8 +26,6 @@ public abstract class ObjectBase{
 	public void touchMove(int x, int y){
 
 	}
-	
-	public void dispose(){}
 	
 	public int getX(){
 		return bounds.x;

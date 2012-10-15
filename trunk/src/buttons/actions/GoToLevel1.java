@@ -13,7 +13,7 @@ public class GoToLevel1 extends Actionable{
 	
 	@Override
 	public void action(){
-		controller.getCanvasGame().setLevel(LevelParser.loadLevel("level1", "res/data/levels.json"));
+		controller.getCanvasGame().setLevel(LevelParser.loadLevel(controller, "level1", "res/data/levels.json"));
 		controller.setCanvasByName(CanvasController.CANVAS_GAME);
 		super.action();
 	}

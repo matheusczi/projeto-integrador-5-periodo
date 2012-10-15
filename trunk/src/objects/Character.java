@@ -19,10 +19,13 @@ public class Character extends ObjectBase{
 	
 	protected Texture texture;
 	
+	protected int direction = DIR_DOWN;
+	
 	protected int tileRow;
 	protected int tileColumn;
 	protected int tileWidth;
 	protected int tileHeight;
+
 	
 	public Character(){
 		bounds = new Rectangle(0, 0, Level.cell_width, Level.cell_height);
@@ -30,7 +33,7 @@ public class Character extends ObjectBase{
 	
 	@Override
 	public void render(SpriteBatch spriteBatch){
-		spriteBatch.draw(texture, Level.grid_offset_x + bounds.x * Level.cell_width, Main.height - Level.grid_offset_y - bounds.y * Level.cell_height, 0, 0, tileWidth, tileHeight);
+		spriteBatch.draw(texture, Level.grid_offset_x + bounds.x * Level.cell_width, Main.height - Level.grid_offset_y - bounds.y * Level.cell_height, 0, direction * Level.cell_height, tileWidth, tileHeight);
 	}
 	
 	@Override
@@ -49,12 +52,16 @@ public class Character extends ObjectBase{
 	public void keyTyped(char character){
 		if(character == 'd'){
 			bounds.x++;
+			direction = DIR_RIGHT;
 		}else if(character == 'a'){
 			bounds.x--;
+			direction = DIR_LEFT;
 		}else if(character == 's'){
 			bounds.y++;
+			direction = DIR_DOWN;
 		}else if(character == 'w'){
 			bounds.y--;
+			direction = DIR_UP;
 		}
 	}
 	

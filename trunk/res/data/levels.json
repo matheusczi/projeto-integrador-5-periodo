@@ -50,7 +50,7 @@
 				{"tile":"ground", "hasBlock":true, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":true, "walkable":true},
-				{"tile":"ground", "hasBlock":false, "isBlockTarget":true, "walkable":true},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":true, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":true, "walkable":true},

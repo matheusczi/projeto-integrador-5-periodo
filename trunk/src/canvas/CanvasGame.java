@@ -43,7 +43,7 @@ public class CanvasGame extends CanvasBase{
 	@Override
 	public void render(SpriteBatch spriteBatch){
 		if(level != null){
-			level.draw(spriteBatch);
+			level.render(spriteBatch);
 		}
 		
 		for(ObjectBase drawable : drawables){
@@ -57,6 +57,7 @@ public class CanvasGame extends CanvasBase{
 			ObjectBase temporaryDrawable = drawable;
 			temporaryDrawable.update(deltaTime);
 		}
+		level.update(deltaTime);
 	}
 	
 	@Override

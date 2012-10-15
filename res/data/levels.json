@@ -5,15 +5,23 @@
 			"wall":"res/image_files/ground_09.png",
 			"water":"res/image_files/ground_03.png",
 			"start":"res/image_files/ground_04.png",
-			"block":"res/image_files/ground_05.png",
+			"block":"res/image_files/wooden_crate.png",
 			"target":"res/image_files/red_dot.png"
+		},
+		"character":{
+			"sprite":"res/image_files/hero.png",
+			"tile-width":40,
+			"tile-height":40,
+			"rows":4,
+			"columns":4,
+			"keyframes":[0,4,8,12],
+			"startPosition":{"x":1, "y":2},
 		},
 		"grid":{
 			"rows":10,
 			"columns":10,
 			"block":"block",
 			"target":"target",
-			"startPosition":{"x":2, "y":2},
 			"map":[
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},

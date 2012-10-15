@@ -2,8 +2,12 @@ package parser;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+
+import objects.Character;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.utils.Array;
 
 import utils.CommonResources;
 
@@ -58,8 +62,6 @@ public class LevelParser {
 				Cell target = null;
 				target = new Cell(grid.getString("target"), false, false, false);
 				level.setTarget(target);
-				JSONObject startPosition = grid.getJSONObject("startPosition");
-				level.setStartPosition(startPosition.getInt("x"), startPosition.getInt("y"));
 				JSONArray map = grid.getJSONArray("map");
 				JSONObject jcell = null;
 				Cell cell = null;
@@ -72,6 +74,23 @@ public class LevelParser {
 //					System.out.println("x: "+j%rows+" y: "+(int)Math.floor(j/rows));
 					level.setCell(j%rows, (int) Math.floor(j/rows), cell);
 				}
+				JSONObject characterJson = jsonLevel.getJSONObject("character");
+				cr.assets.put("character", new Texture(characterJson.getString("sprite")));
+				int tile_width = characterJson.getInt("tile-width");
+				int tile_height = characterJson.getInt("tile-height");
+				int tile_rows = characterJson.getInt("rows");
+				int tile_columns = characterJson.getInt("columns");
+				// TODO: find a way of setting keyframes from json
+//				String[] keyframes = characterJson.getJSONArray("keyframes").toString().split(",");
+				Character character = new Character();
+				character.setSprite(cr.assets.get("character"));
+				character.setTileWidth(tile_width);
+				character.setTileHeight(tile_height);
+				character.setTileRows(tile_rows);
+				character.setTileColumns(tile_columns);
+				JSONObject startPosition = characterJson.getJSONObject("startPosition");
+				character.setPosition(startPosition.getInt("x"), startPosition.getInt("y"));
+				level.setCharacter(character);
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

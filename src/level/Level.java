@@ -1,5 +1,6 @@
 package level;
 
+import objects.Character;
 import utils.CommonResources;
 
 import com.badlogic.gdx.graphics.Texture;
@@ -8,22 +9,22 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import core.Main;
 
 public class Level {
-	private int rows;
-	private int columns;
-	private String name;
-	private Cell block;
-	private Cell target;
-	private int playerStartX;
-	private int playerStartY;
-	private Cell[][] grid;
+	private int rows = 0;
+	private int columns = 0;
+	private String name = "";
+	private Cell block = null;
+	private Cell target = null;
+	private Cell[][] grid = null;
 	
-	private int cell_width = 40;
-	private int cell_height = 40;
+	public static int cell_width = 40;
+	public static int cell_height = 40;
 	
-	private int screen_center_x = Main.width / 2;
-	private int screen_center_y = Main.height / 2;
-	private int grid_offset_x = 0;
-	private int grid_offset_y = 0;
+	public static int screen_center_x = 0;
+	public static int screen_center_y = 0;
+	public static int grid_offset_x = 0;
+	public static int grid_offset_y = 0;
+	
+	private Character hero = null;
 	
 	public Level(int rows, int columns, String name){
 		this.rows = rows;
@@ -32,25 +33,22 @@ public class Level {
 		this.grid = new Cell[rows][columns];
 		block = null;
 		target = null;
-		playerStartX = 0;
-		playerStartY = 0;
 		screen_center_x = Main.width / 2;
 		screen_center_y = Main.height / 2;
 		grid_offset_x = screen_center_x-(cell_width*columns/2);
 		grid_offset_y = screen_center_y-(cell_height*rows/2);
 	}
 
+	public void setCharacter(Character c){
+		hero = c;
+	}
+	
 	public void setBlock(Cell b){
 		block = b;
 	}
 	
 	public void setTarget(Cell t){
 		target = t;
-	}
-	
-	public void setStartPosition(int x, int y){
-		playerStartX = x;
-		playerStartY = y;
 	}
 	
 	public void setCell(int x, int y, Cell c){
@@ -69,7 +67,7 @@ public class Level {
 		return name;
 	}
 
-	public void draw(SpriteBatch spriteBatch){
+	public void render(SpriteBatch spriteBatch){
 		CommonResources res = CommonResources.getInstance();
 		int dest_x = 0;
 		int dest_y = 0;
@@ -92,6 +90,10 @@ public class Level {
 				}
 			}
 		}
+		hero.render(spriteBatch);
 	}
 	
+	public void update(float deltaTime){
+		hero.update(deltaTime);
+	}
 }

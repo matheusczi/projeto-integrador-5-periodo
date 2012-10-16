@@ -1,6 +1,6 @@
 package level;
 
-import objects.Character;
+import objects.Hero;
 import utils.CommonResources;
 
 import com.badlogic.gdx.graphics.Texture;
@@ -24,7 +24,7 @@ public class Level {
 	public static int grid_offset_x = 0;
 	public static int grid_offset_y = 0;
 	
-	private Character hero = null;
+	private Hero hero = null;
 	
 	public Level(int rows, int columns, String name){
 		this.rows = rows;
@@ -39,7 +39,7 @@ public class Level {
 		grid_offset_y = screen_center_y-(cell_height*rows/2);
 	}
 
-	public void setCharacter(Character c){
+	public void setCharacter(Hero c){
 		hero = c;
 	}
 	

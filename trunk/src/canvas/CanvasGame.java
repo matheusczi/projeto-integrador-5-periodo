@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import level.Level;
 
 import objects.ObjectBase;
-import objects.Character;
+import objects.Hero;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
@@ -19,7 +19,7 @@ public class CanvasGame extends CanvasBase{
 	private ArrayList<Sound> audioEffects;
 	private Level level = null;
 	
-	private Character hero = null;
+	private Hero hero = null;
 	
 	public CanvasGame(CanvasController controller){
 		super(controller);
@@ -112,9 +112,9 @@ public class CanvasGame extends CanvasBase{
 		return super.touchMoved(x, y);
 	}
 	
-	public Character getHero(){
+	public Hero getHero(){
 		if(hero == null){
-			hero = new Character();
+			hero = new Hero();
 			drawables.add(hero);
 		}
 		return hero;

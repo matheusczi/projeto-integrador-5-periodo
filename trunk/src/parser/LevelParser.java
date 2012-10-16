@@ -3,7 +3,7 @@ package parser;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-import objects.Character;
+import objects.Hero;
 
 import canvas.CanvasController;
 
@@ -80,7 +80,7 @@ public class LevelParser{
 					// TODO: find a way of setting keyframes from json
 					// String[] keyframes = characterJson.getJSONArray("keyframes").toString().split(",");
 					
-					Character character = controller.getCanvasGame().getHero();
+					Hero character = controller.getCanvasGame().getHero();
 					character.setSprite(cr.assets.get("character"));
 					character.setTileWidth(tile_width);
 					character.setTileHeight(tile_height);

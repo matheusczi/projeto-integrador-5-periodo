@@ -38,9 +38,39 @@ public class Level {
 		grid_offset_x = screen_center_x-(cell_width*columns/2);
 		grid_offset_y = screen_center_y-(cell_height*rows/2);
 	}
+	
+	public boolean moveTo(int to_x, int to_y, int from_x, int from_y){
+		// pode andar na posicao desejada?
+		if(grid[to_x][to_y].isWalkable){
+			// a posicao desejada tem bloco?
+			if(grid[to_x][to_y].hasBlock){
+				// a posicao de onde venho tem um bloco?
+				if(grid[from_x][from_y].hasBlock){
+					return false;
+				}else{
+					// posso mover bloco no mesmo sentido?
+					if(moveTo(to_x+(to_x-from_x),to_y+(to_y-from_y),to_x, to_y)){
+						// mover bloco
+						grid[to_x][to_y].hasBlock = false;
+						grid[to_x+(to_x-from_x)][to_y+(to_y-from_y)].hasBlock = true;
+						// pode mover boneco ;)
+						return true;
+					}else{
+						return false;
+					}
+				}
+			}else{
+				// posso mover
+				return true;
+			}
+		}
+		// nah
+		return false;
+	}
 
 	public void setCharacter(Hero c){
 		hero = c;
+		hero.setParentLevel(this);
 	}
 	
 	public void setBlock(Cell b){

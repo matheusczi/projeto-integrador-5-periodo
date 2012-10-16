@@ -26,6 +26,8 @@ public class Hero extends ObjectBase{
 	protected int tileWidth;
 	protected int tileHeight;
 
+	// reference to parent level -- XXX
+	private Level lvl;
 	
 	public Hero(){
 		bounds = new Rectangle(0, 0, Level.cell_width, Level.cell_height);
@@ -33,7 +35,7 @@ public class Hero extends ObjectBase{
 	
 	@Override
 	public void render(SpriteBatch spriteBatch){
-		spriteBatch.draw(texture, Level.grid_offset_x + bounds.x * Level.cell_width, Main.height - Level.grid_offset_y - bounds.y * Level.cell_height, 0, direction * Level.cell_height, tileWidth, tileHeight);
+		spriteBatch.draw(texture, Level.grid_offset_x + bounds.x * Level.cell_width, Main.height - Level.grid_offset_y - (bounds.y+1) * Level.cell_height, 0, direction * Level.cell_height, tileWidth, tileHeight);
 	}
 	
 	@Override
@@ -51,17 +53,37 @@ public class Hero extends ObjectBase{
 	@Override
 	public void keyTyped(char character){
 		if(character == 'd'){
-			bounds.x++;
-			direction = DIR_RIGHT;
+			move(DIR_RIGHT);
 		}else if(character == 'a'){
-			bounds.x--;
-			direction = DIR_LEFT;
-		}else if(character == 's'){
-			bounds.y++;
-			direction = DIR_DOWN;
-		}else if(character == 'w'){
-			bounds.y--;
+			move(DIR_LEFT);
+		}else if(character == 's'){			
+			move(DIR_DOWN);
+		}else if(character == 'w'){			
+			move(DIR_UP);
+		}
+	}
+	
+	private void move(int dir){
+		if(dir == DIR_UP){
 			direction = DIR_UP;
+			if(lvl.moveTo(bounds.x, bounds.y - 1, bounds.x, bounds.y)){
+				bounds.y--;
+			}
+		}else if(dir == DIR_DOWN){
+			direction = DIR_DOWN;
+			if(lvl.moveTo(bounds.x, bounds.y + 1, bounds.x, bounds.y)){
+				bounds.y++;
+			}
+		}else if(dir == DIR_LEFT){
+			direction = DIR_LEFT;
+			if(lvl.moveTo(bounds.x - 1, bounds.y, bounds.x, bounds.y)){
+				bounds.x--;
+			}
+		}else if(dir == DIR_RIGHT){
+			direction = DIR_RIGHT;
+			if(lvl.moveTo(bounds.x + 1, bounds.y, bounds.x, bounds.y)){
+				bounds.x++;
+			}
 		}
 	}
 	
@@ -83,5 +105,9 @@ public class Hero extends ObjectBase{
 	
 	public void setTileColumns(int tileColumn){
 		this.tileColumn = tileColumn;
+	}
+	
+	public void setParentLevel(Level l){
+		lvl = l;
 	}
 }

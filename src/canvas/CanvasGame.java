@@ -61,6 +61,9 @@ public class CanvasGame extends CanvasBase{
 			temporaryDrawable.update(deltaTime);
 		}
 		level.update(deltaTime);
+		if(level.isLevelWon()){
+			controller.setCanvasByName(CanvasController.CANVAS_PROGRESS);	
+		}
 	}
 	
 	@Override

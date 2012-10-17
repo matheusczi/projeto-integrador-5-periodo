@@ -7,6 +7,7 @@ import objects.ObjectBase;
 
 import buttons.Button;
 import buttons.actions.GoToLevel1;
+import buttons.actions.GoToLevel2;
 import buttons.actions.GoToMenu;
 
 import com.badlogic.gdx.Gdx;
@@ -24,6 +25,7 @@ public class CanvasProgress extends CanvasBase{
 		Texture button2 = new Texture(Gdx.files.internal("res/image_files/buttons/button2.png"));
 		
 		drawables.add(new Button(new GoToLevel1(controller), button1, button2, new Rectangle(100, 80, 100, 100)));
+		drawables.add(new Button(new GoToLevel2(controller), button1, button2, new Rectangle(100, 200, 100, 100)));
 		drawables.add(new Button(new GoToMenu(controller), button1, button2, new Rectangle(100, 320, 100, 100)));
 	}
 		

@@ -24,6 +24,23 @@ public class Level {
 	public static int grid_offset_x = 0;
 	public static int grid_offset_y = 0;
 	
+	public int steps = 0;
+	public int boxSteps = 0;
+	// minimo necessario para completar a fase
+	public int minSteps = 0;
+	public int minBoxSteps = 0;
+	
+	// score máximo atingivel no level, configurado pelo json, para
+	// calculo de pontuacao
+	public int topScore = 0;
+	
+	// score maximo ja atingido na fase, salvo pela persistencia,
+	// ainda nao sei se vou precisar disso aqui ou nao, mas acho que nao
+	public int maxScore = 0;
+	
+	// meu score feliz ;)
+	public int score = 0;
+	
 	private Hero hero = null;
 	
 	public Level(int rows, int columns, String name){
@@ -53,6 +70,8 @@ public class Level {
 						// mover bloco
 						grid[to_x][to_y].hasBlock = false;
 						grid[to_x+(to_x-from_x)][to_y+(to_y-from_y)].hasBlock = true;
+						boxSteps++;
+						System.out.println("Steps: "+steps+" boxSteps: "+boxSteps);
 						// pode mover boneco ;)
 						return true;
 					}else{
@@ -61,6 +80,8 @@ public class Level {
 				}
 			}else{
 				// posso mover
+				steps++;
+				System.out.println("Steps: "+steps+" boxSteps: "+boxSteps);
 				return true;
 			}
 		}
@@ -97,6 +118,18 @@ public class Level {
 		return name;
 	}
 
+	public boolean isLevelWon(){
+		for(int i=0; i < rows; i++){
+			for(int j=0; j < columns; j++){
+				if(grid[i][j].isBlockTarget && !grid[i][j].hasBlock){
+					return false;
+				}
+			}
+		}
+		
+		return true;
+	}
+	
 	public void render(SpriteBatch spriteBatch){
 		CommonResources res = CommonResources.getInstance();
 		int dest_x = 0;

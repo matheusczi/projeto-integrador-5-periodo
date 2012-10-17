@@ -25,7 +25,7 @@ public class Hero extends ObjectBase{
 	protected int tileColumn;
 	protected int tileWidth;
 	protected int tileHeight;
-
+	
 	// reference to parent level -- XXX
 	private Level lvl;
 	

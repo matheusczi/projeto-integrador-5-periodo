@@ -27,12 +27,12 @@ public class Level {
 	public int steps = 0;
 	public int boxSteps = 0;
 	// minimo necessario para completar a fase
-	public int minSteps = 0;
-	public int minBoxSteps = 0;
+	private int minSteps = 0;
+	private int minBoxSteps = 0;
 	
 	// score máximo atingivel no level, configurado pelo json, para
 	// calculo de pontuacao
-	public int topScore = 0;
+	private int topScore = 0;
 	
 	// score maximo ja atingido na fase, salvo pela persistencia,
 	// ainda nao sei se vou precisar disso aqui ou nao, mas acho que nao
@@ -89,6 +89,18 @@ public class Level {
 		return false;
 	}
 
+	public void setMinSteps(int s){
+		minSteps = s;
+	}
+	
+	public void setMinBoxSteps(int s){
+		minBoxSteps = s;
+	}
+	
+	public void setTopScore(int s){
+		topScore = s;
+	}
+	
 	public void setCharacter(Hero c){
 		hero = c;
 		hero.setParentLevel(this);
@@ -157,6 +169,7 @@ public class Level {
 	}
 	
 	public void update(float deltaTime){
+		score = topScore - steps*5 - boxSteps*10;
 		hero.update(deltaTime);
 	}
 }

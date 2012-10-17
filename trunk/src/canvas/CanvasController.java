@@ -45,6 +45,7 @@ public class CanvasController{
 			activeCanvas = canvasProgress;
 		}else if(name == CANVAS_GAME){
 			activeCanvas = canvasGame;
+			canvasGame.resetData();
 		}
 		return activeCanvas;
 	}

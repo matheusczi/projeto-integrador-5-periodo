@@ -6,9 +6,10 @@ import java.util.ArrayList;
 import objects.ObjectBase;
 
 import buttons.Button;
-import buttons.actions.GoToLevel1;
-import buttons.actions.GoToLevel2;
 import buttons.actions.GoToMenu;
+import buttons.actions.levels.GoToLevel1;
+import buttons.actions.levels.GoToLevel2;
+import buttons.actions.levels.GoToLevel3;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
@@ -24,9 +25,10 @@ public class CanvasProgress extends CanvasBase{
 		Texture button1 = new Texture(Gdx.files.internal("res/image_files/buttons/button1.png"));
 		Texture button2 = new Texture(Gdx.files.internal("res/image_files/buttons/button2.png"));
 		
-		drawables.add(new Button(new GoToLevel1(controller), button1, button2, new Rectangle(100, 80, 100, 100)));
-		drawables.add(new Button(new GoToLevel2(controller), button1, button2, new Rectangle(100, 200, 100, 100)));
-		drawables.add(new Button(new GoToMenu(controller), button1, button2, new Rectangle(100, 320, 100, 100)));
+		drawables.add(new Button(new GoToLevel1(controller), button1, button2, new Rectangle(100, 50, 100, 50)));
+		drawables.add(new Button(new GoToLevel2(controller), button1, button2, new Rectangle(100, 150, 100, 50)));
+		drawables.add(new Button(new GoToLevel3(controller), button1, button2, new Rectangle(100, 250, 100, 50)));
+		drawables.add(new Button(new GoToMenu(controller), button1, button2, new Rectangle(100, 350, 100, 50)));
 	}
 		
 	@Override

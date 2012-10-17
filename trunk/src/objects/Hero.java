@@ -27,15 +27,15 @@ public class Hero extends ObjectBase{
 	protected int tileHeight;
 	
 	// reference to parent level -- XXX
-	private Level lvl;
+	private Level lvl = null;
 	
 	public Hero(){
-		bounds = new Rectangle(0, 0, Level.cell_width, Level.cell_height);
+		this.bounds = new Rectangle(0, 0, Level.cell_width, Level.cell_height);
 	}
 	
 	@Override
 	public void render(SpriteBatch spriteBatch){
-		spriteBatch.draw(texture, Level.grid_offset_x + bounds.x * Level.cell_width, Main.height - Level.grid_offset_y - (bounds.y+1) * Level.cell_height, 0, direction * Level.cell_height, tileWidth, tileHeight);
+		spriteBatch.draw(texture, Level.grid_offset_x + bounds.x * Level.cell_width, Main.height - Level.grid_offset_y - (bounds.y + 1) * Level.cell_height, 0, direction * Level.cell_height, tileWidth, tileHeight);
 	}
 	
 	@Override
@@ -56,9 +56,9 @@ public class Hero extends ObjectBase{
 			move(DIR_RIGHT);
 		}else if(character == 'a'){
 			move(DIR_LEFT);
-		}else if(character == 's'){			
+		}else if(character == 's'){
 			move(DIR_DOWN);
-		}else if(character == 'w'){			
+		}else if(character == 'w'){
 			move(DIR_UP);
 		}
 	}

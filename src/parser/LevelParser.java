@@ -80,6 +80,11 @@ public class LevelParser{
 					// TODO: find a way of setting keyframes from json
 					// String[] keyframes = characterJson.getJSONArray("keyframes").toString().split(",");
 					
+					JSONObject score = jsonLevel.getJSONObject("score");
+					level.setMinSteps(score.getInt("minSteps"));
+					level.setMinBoxSteps(score.getInt("minBoxSteps"));
+					level.setTopScore(score.getInt("topScore"));
+					
 					Hero character = controller.getCanvasGame().getHero();
 					character.setSprite(cr.assets.get("character"));
 					character.setTileWidth(tile_width);

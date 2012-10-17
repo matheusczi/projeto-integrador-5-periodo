@@ -1,5 +1,10 @@
 {
 	"level1":{
+		"score":{
+			"minSteps":22,
+			"minBoxSteps":6,
+			"topScore":1000	
+		},
 		"tiles":{
 			"ground":"res/image_files/ground_05.png",
 			"wall":"res/image_files/ground_04.png",
@@ -137,6 +142,11 @@
 		}
 	},
 	"level2":{
+		"score":{
+			"minSteps":88,
+			"minBoxSteps":27,
+			"topScore":1000	
+		},
 		"tiles":{
 			"ground":"res/image_files/ground_05.png",
 			"wall":"res/image_files/ground_04.png",

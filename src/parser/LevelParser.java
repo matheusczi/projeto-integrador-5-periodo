@@ -55,7 +55,7 @@ public class LevelParser{
 					JSONObject grid = jsonLevel.getJSONObject("grid");
 					int rows = grid.getInt("rows");
 					int columns = grid.getInt("columns");
-					level = new Level(rows, columns, key);
+					level = new Level(controller, rows, columns, key);
 					Cell block = null;
 					block = new Cell(grid.getString("block"), true, false, false);
 					level.setBlock(block);
@@ -79,11 +79,6 @@ public class LevelParser{
 					int tile_columns = characterJson.getInt("columns");
 					// TODO: find a way of setting keyframes from json
 					// String[] keyframes = characterJson.getJSONArray("keyframes").toString().split(",");
-					
-					JSONObject score = jsonLevel.getJSONObject("score");
-					level.setMinSteps(score.getInt("minSteps"));
-					level.setMinBoxSteps(score.getInt("minBoxSteps"));
-					level.setTopScore(score.getInt("topScore"));
 					
 					Hero character = controller.getCanvasGame().getHero();
 					character.setSprite(cr.assets.get("character"));

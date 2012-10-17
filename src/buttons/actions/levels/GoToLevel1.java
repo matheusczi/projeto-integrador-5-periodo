@@ -1,5 +1,6 @@
-package buttons.actions;
+package buttons.actions.levels;
 
+import buttons.actions.Actionable;
 import parser.LevelParser;
 import canvas.CanvasController;
 

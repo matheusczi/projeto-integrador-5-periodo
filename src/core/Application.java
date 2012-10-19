@@ -5,6 +5,7 @@ import canvas.CanvasController;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Application implements ApplicationListener{
@@ -12,6 +13,7 @@ public class Application implements ApplicationListener{
 	private SpriteBatch spriteBatch;
 	
 	public void create(){
+		Texture.setEnforcePotImages(false);
 		spriteBatch = new SpriteBatch();
 		canvasController = new CanvasController();
 	}

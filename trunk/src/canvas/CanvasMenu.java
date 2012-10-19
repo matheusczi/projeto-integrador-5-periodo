@@ -8,35 +8,33 @@ import buttons.actions.GoToExit;
 import buttons.actions.GoToOptions;
 import buttons.actions.GoToProgress;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
+import core.Main;
 
 import objects.ObjectBase;
 
 public class CanvasMenu extends CanvasBase{
 	private ArrayList<ObjectBase> drawables;
-
-	Texture background = new Texture(Gdx.files.internal("res/image_files/background.jpg"));
 	
 	public CanvasMenu(CanvasController controller){
 		super(controller);
 		drawables = new ArrayList<ObjectBase>();
-		Texture button1 = new Texture(Gdx.files.internal("res/image_files/buttons/button5.png"));
-		Texture button2 = new Texture(Gdx.files.internal("res/image_files/buttons/button3.png"));
 		
-		drawables.add(new Button(new GoToOptions(controller), button1, button2, new Rectangle(100, 80, 100, 100)));
-		drawables.add(new Button(new GoToProgress(controller), button1, button2, new Rectangle(100, 200, 100, 100)));
-		drawables.add(new Button(new GoToExit(controller), button1, button2, new Rectangle(100, 320, 100, 100)));
+		Texture button1 = controller.getButtonTexture3();
+		Texture button2 = controller.getButtonTexture4();
+		
+		drawables.add(new Button(new GoToProgress(controller), button1, button2, new Rectangle(70, 50, 100, 100)));
+		drawables.add(new Button(new GoToOptions(controller), button1, button2, new Rectangle(70, 180, 100, 100)));
+		drawables.add(new Button(new GoToExit(controller), button1, button2, new Rectangle(Main.width - 120, Main.height - 80, 50, 50)));
 	}
 	
 	@Override
 	public void render(SpriteBatch spriteBatch){
-		spriteBatch.draw(background, 0, 0);
 		for(ObjectBase drawable : drawables){
 			drawable.render(spriteBatch);
 		}
-		
 	}
 	
 	@Override

@@ -11,31 +11,29 @@ import buttons.actions.levels.GoToLevel1;
 import buttons.actions.levels.GoToLevel2;
 import buttons.actions.levels.GoToLevel3;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import core.Main;
+
 public class CanvasProgress extends CanvasBase{
 	private ArrayList<ObjectBase> drawables;
-	
-	Texture background = new Texture(Gdx.files.internal("res/image_files/background2.jpg"));
 	
 	public CanvasProgress(CanvasController controller){
 		super(controller);
 		
 		drawables = new ArrayList<ObjectBase>();
-		Texture button1 = new Texture(Gdx.files.internal("res/image_files/buttons/bot1.png"));
-		Texture button2 = new Texture(Gdx.files.internal("res/image_files/buttons/bot2.png"));
+		Texture button1 = controller.getButtonTexture3();
+		Texture button2 = controller.getButtonTexture4();
 		
 		drawables.add(new Button(new GoToLevel1(controller), button1, button2, new Rectangle(100, 50, 100, 50)));
 		drawables.add(new Button(new GoToLevel2(controller), button1, button2, new Rectangle(100, 150, 100, 50)));
 		drawables.add(new Button(new GoToLevel3(controller), button1, button2, new Rectangle(100, 250, 100, 50)));
-		drawables.add(new Button(new GoToMenu(controller), button1, button2, new Rectangle(100, 350, 100, 50)));
+		drawables.add(new Button(new GoToMenu(controller), button1, button2, new Rectangle(Main.width - 120, Main.height - 80, 50, 50)));
 	}
-		
+	
 	@Override
 	public void render(SpriteBatch spriteBatch){
-		spriteBatch.draw(background, 0, 0);
 		for(ObjectBase drawable : drawables){
 			drawable.render(spriteBatch);
 		}

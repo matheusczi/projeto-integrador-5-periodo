@@ -304,5 +304,99 @@
 				
 			]
 		}
-	}
+	},
+	"level3":{
+		"score":{
+			"minSteps":31,
+			"minBoxSteps":7,
+			"topScore":1000	
+		},
+		"tiles":{
+			"wall":"res/image_files/ground_09.png",
+			"ground":"res/image_files/ground_05.png",
+			"grass":"res/image_files/ground_07.png",
+			"start":"res/image_files/ground_04.png",
+			"block":"res/image_files/wooden_crate.png",
+			"target":"res/image_files/red_dot.png"
+		},
+		"character":{
+			"sprite":"res/image_files/hero.png",
+			"tile-width":40,
+			"tile-height":40,
+			"rows":4,
+			"columns":4,
+			"keyframes":[0,4,8,12],
+			"startPosition":{"x":5, "y":1},
+		},
+		"grid":{
+			"rows":8,
+			"columns":7,
+			"block":"block",
+			"target":"target",
+			"map":[
+				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				
+				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				
+				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+			]
+		}
+	},
 }

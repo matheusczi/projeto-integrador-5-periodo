@@ -69,7 +69,7 @@ public class LevelParser{
 						jcell = map.getJSONObject(j);
 						cell = new Cell(jcell.getString("tile"), jcell.getBoolean("hasBlock"), jcell.getBoolean("isBlockTarget"), jcell.getBoolean("walkable"));
 						// System.out.println("x: "+j%rows+" y: "+(int)Math.floor(j/rows));
-						level.setCell(j % rows, (int)Math.floor(j / rows), cell);
+						level.setCell(j % columns, (int)Math.floor(j / columns), cell);
 					}
 					JSONObject characterJson = jsonLevel.getJSONObject("character");
 					cr.assets.put("character", new Texture(characterJson.getString("sprite")));

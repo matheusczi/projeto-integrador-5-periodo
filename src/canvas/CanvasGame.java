@@ -115,13 +115,7 @@ public class CanvasGame extends CanvasBase{
 	public boolean keyTyped(char character){
 		for(ObjectBase drawable : drawables){
 			drawable.keyTyped(character);
-		}
-		
-		if(Gdx.input.isKeyPressed(Keys.ENTER)){
-			System.out.println("CanvasGame Enter");
-			controller.setCanvasByName(CanvasController.CANVAS_PROGRESS);
-		}
-		
+		}		
 		return super.keyTyped(character);
 	}
 	

@@ -34,7 +34,7 @@ public class Level{
 		this.rows = rows;
 		this.columns = columns;
 		this.name = name;
-		this.grid = new Cell[rows][columns];
+		this.grid = new Cell[columns][rows];
 		block = null;
 		target = null;
 		screen_center_x = Main.width / 2;
@@ -107,8 +107,8 @@ public class Level{
 		CommonResources res = CommonResources.getInstance();
 		int dest_x = 0;
 		int dest_y = 0;
-		for(int i = 0; i < rows; i++){
-			for(int j = 0; j < columns; j++){
+		for(int i = 0; i < columns; i++){
+			for(int j = 0; j < rows; j++){
 				// System.out.println("x: "+i*cell_width+" y: "+j*cell_height);
 				Cell c = grid[i][j];
 				Texture t = res.assets.get(c.tile);

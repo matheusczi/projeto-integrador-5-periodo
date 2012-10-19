@@ -16,12 +16,14 @@ import objects.ObjectBase;
 
 public class CanvasMenu extends CanvasBase{
 	private ArrayList<ObjectBase> drawables;
+
+	Texture background = new Texture(Gdx.files.internal("res/image_files/background.jpg"));
 	
 	public CanvasMenu(CanvasController controller){
 		super(controller);
 		drawables = new ArrayList<ObjectBase>();
-		Texture button1 = new Texture(Gdx.files.internal("res/image_files/buttons/button1.png"));
-		Texture button2 = new Texture(Gdx.files.internal("res/image_files/buttons/button2.png"));
+		Texture button1 = new Texture(Gdx.files.internal("res/image_files/buttons/button5.png"));
+		Texture button2 = new Texture(Gdx.files.internal("res/image_files/buttons/button3.png"));
 		
 		drawables.add(new Button(new GoToOptions(controller), button1, button2, new Rectangle(100, 80, 100, 100)));
 		drawables.add(new Button(new GoToProgress(controller), button1, button2, new Rectangle(100, 200, 100, 100)));
@@ -30,9 +32,11 @@ public class CanvasMenu extends CanvasBase{
 	
 	@Override
 	public void render(SpriteBatch spriteBatch){
+		spriteBatch.draw(background, 0, 0);
 		for(ObjectBase drawable : drawables){
 			drawable.render(spriteBatch);
 		}
+		
 	}
 	
 	@Override

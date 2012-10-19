@@ -17,7 +17,7 @@ public class CanvasSplash extends CanvasBase{
 	@Override
 	public void render(SpriteBatch spriteBatch){
 		renderer.begin(ShapeType.FilledRectangle);
-		renderer.setColor(1, 0.8f, 0, 1);
+		renderer.setColor(0.0f, 0.1f, 0.05f, 1);
 		renderer.filledRect(0, 0, Main.width, Main.height);
 		renderer.end();
 		super.render(spriteBatch);

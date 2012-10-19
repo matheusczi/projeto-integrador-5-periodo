@@ -1,11 +1,15 @@
 package canvas;
 
+import java.awt.Rectangle;
 import java.util.ArrayList;
 
 import level.Level;
 
 import objects.ObjectBase;
 import objects.Hero;
+
+import buttons.Button;
+import buttons.actions.GoToMenuSurrending;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
@@ -38,6 +42,7 @@ public class CanvasGame extends CanvasBase{
 		musics = new ArrayList<Music>();
 		audioEffects = new ArrayList<Sound>();
 		
+		drawables.add(new Button(new GoToMenuSurrending(controller), controller.getButtonTexture3(), controller.getButtonTexture4(), new Rectangle(Main.width - 150, Main.height - 80, 50, 50)));
 		font = new BitmapFont();
 		
 		// Music music = Gdx.audio.newMusic(Gdx.files.internal("res/sound_files/Enya - Carribean Blue.mp3"));

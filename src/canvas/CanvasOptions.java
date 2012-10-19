@@ -11,6 +11,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import core.Main;
+
 public class CanvasOptions extends CanvasBase{
 	private ArrayList<ObjectBase> drawables;
 	
@@ -19,10 +21,7 @@ public class CanvasOptions extends CanvasBase{
 	public CanvasOptions(CanvasController controller){
 		super(controller);
 		drawables = new ArrayList<ObjectBase>();
-		Texture button1 = new Texture(Gdx.files.internal("res/image_files/buttons/bot1.png"));
-		Texture button2 = new Texture(Gdx.files.internal("res/image_files/buttons/bot2.png"));
-		
-		drawables.add(new Button(new GoToMenu(controller), button1, button2, new Rectangle(100, 320, 100, 100)));
+		drawables.add(new Button(new GoToMenu(controller), controller.getButtonTexture3(), controller.getButtonTexture4(), new Rectangle(Main.width - 120, Main.height - 80, 50, 50)));
 	}
 	
 	@Override

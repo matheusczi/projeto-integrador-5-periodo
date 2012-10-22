@@ -46,9 +46,14 @@ def convert(root,level_name=None):
 
 			for line in lvl:
 				CURRENT_CELL["y"] += 1
+				CURRENT_CELL["x"] = 0
 				for cell in line.text:
 					CURRENT_CELL["x"] += 1
 					tile = createTile(cell)
+					grid["map"].append(tile)
+				for i in range(CURRENT_CELL["x"], width):
+					CURRENT_CELL["x"] += 1
+					tile = createTile(FLOOR)
 					grid["map"].append(tile)
 
 			character = createCharacter()

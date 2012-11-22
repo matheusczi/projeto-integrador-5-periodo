@@ -17,10 +17,17 @@ public class CanvasController{
 	private CanvasProgress canvasProgress;
 	private CanvasGame canvasGame;
 	
+	private Texture backGroundTexture1;
+	private Texture backGroundTexture2;
+	private Texture backGroundTexture3;
+	
 	private Texture buttonTexture1;
 	private Texture buttonTexture2;
 	private Texture buttonTexture3;
 	private Texture buttonTexture4;
+	private Texture buttonTexture5;
+	private Texture buttonTexture6;
+
 	
 	public CanvasController(){
 		canvasSplash = new CanvasSplash(this);
@@ -38,6 +45,27 @@ public class CanvasController{
 	
 	public CanvasGame getCanvasGame(){
 		return canvasGame;
+	}
+	
+	public Texture getBackGroundTexture1(){
+		if(backGroundTexture1 == null){
+			backGroundTexture1 = new Texture(Gdx.files.internal("res/image_files/background4.jpg"));
+		}
+		return backGroundTexture1;
+	}
+	
+	public Texture getBackGroundTexture2(){
+		if(backGroundTexture2 == null){
+			backGroundTexture2 = new Texture(Gdx.files.internal("res/image_files/background6.jpg"));
+		}
+		return backGroundTexture2;
+	}
+	
+	public Texture getBackGroundTexture3(){
+		if(backGroundTexture3 == null){
+			backGroundTexture3 = new Texture(Gdx.files.internal("res/image_files/background5.jpg"));
+		}
+		return backGroundTexture3;
 	}
 	
 	public Texture getButtonTexture1(){
@@ -66,6 +94,20 @@ public class CanvasController{
 			buttonTexture4 = new Texture(Gdx.files.internal("res/image_files/buttons/bot2.png"));
 		}
 		return buttonTexture4;
+	}
+	
+	public Texture getButtonTexture5(){
+		if(buttonTexture5 == null){
+			buttonTexture5 = new Texture(Gdx.files.internal("res/image_files/buttons/button3.png"));
+		}
+		return buttonTexture5;
+	}
+	
+	public Texture getButtonTexture6(){
+		if(buttonTexture6 == null){
+			buttonTexture6= new Texture(Gdx.files.internal("res/image_files/buttons/button4.png"));
+		}
+		return buttonTexture6;
 	}
 	
 	public CanvasBase setCanvasByName(String name){

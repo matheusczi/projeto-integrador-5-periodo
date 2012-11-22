@@ -16,17 +16,15 @@ import core.Main;
 public class CanvasOptions extends CanvasBase{
 	private ArrayList<ObjectBase> drawables;
 	
-	Texture background = new Texture(Gdx.files.internal("res/image_files/background3.jpg"));
-	
 	public CanvasOptions(CanvasController controller){
 		super(controller);
 		drawables = new ArrayList<ObjectBase>();
-		drawables.add(new Button(new GoToMenu(controller), controller.getButtonTexture3(), controller.getButtonTexture4(), new Rectangle(Main.width - 120, Main.height - 80, 50, 50)));
+		drawables.add(new Button(new GoToMenu(controller), controller.getButtonTexture5(), controller.getButtonTexture6(), new Rectangle(Main.width - 120, Main.height - 80, 50, 50)));
 	}
 	
 	@Override
 	public void render(SpriteBatch spriteBatch){
-		spriteBatch.draw(background, 0, 0);
+		spriteBatch.draw(controller.getBackGroundTexture3(), 0, 0);
 		for(ObjectBase drawable : drawables){
 			drawable.render(spriteBatch);
 		}

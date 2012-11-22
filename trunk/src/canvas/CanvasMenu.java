@@ -8,6 +8,7 @@ import buttons.actions.GoToExit;
 import buttons.actions.GoToOptions;
 import buttons.actions.GoToProgress;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -22,8 +23,8 @@ public class CanvasMenu extends CanvasBase{
 		super(controller);
 		drawables = new ArrayList<ObjectBase>();
 		
-		Texture button1 = controller.getButtonTexture3();
-		Texture button2 = controller.getButtonTexture4();
+		Texture button1 = controller.getButtonTexture5();
+		Texture button2 = controller.getButtonTexture6();
 		
 		drawables.add(new Button(new GoToProgress(controller), button1, button2, new Rectangle(70, 50, 100, 100)));
 		drawables.add(new Button(new GoToOptions(controller), button1, button2, new Rectangle(70, 180, 100, 100)));
@@ -32,6 +33,7 @@ public class CanvasMenu extends CanvasBase{
 	
 	@Override
 	public void render(SpriteBatch spriteBatch){
+		spriteBatch.draw(controller.getBackGroundTexture1(), 0, 0);
 		for(ObjectBase drawable : drawables){
 			drawable.render(spriteBatch);
 		}

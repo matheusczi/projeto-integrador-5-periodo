@@ -11,6 +11,7 @@ import buttons.actions.levels.GoToLevel1;
 import buttons.actions.levels.GoToLevel2;
 import buttons.actions.levels.GoToLevel3;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -23,8 +24,8 @@ public class CanvasProgress extends CanvasBase{
 		super(controller);
 		
 		drawables = new ArrayList<ObjectBase>();
-		Texture button1 = controller.getButtonTexture3();
-		Texture button2 = controller.getButtonTexture4();
+		Texture button1 = controller.getButtonTexture5();
+		Texture button2 = controller.getButtonTexture6();
 		
 		drawables.add(new Button(new GoToLevel1(controller), button1, button2, new Rectangle(100, 50, 100, 50)));
 		drawables.add(new Button(new GoToLevel2(controller), button1, button2, new Rectangle(100, 150, 100, 50)));
@@ -34,6 +35,7 @@ public class CanvasProgress extends CanvasBase{
 	
 	@Override
 	public void render(SpriteBatch spriteBatch){
+		spriteBatch.draw(controller.getBackGroundTexture2(), 0, 0);
 		for(ObjectBase drawable : drawables){
 			drawable.render(spriteBatch);
 		}

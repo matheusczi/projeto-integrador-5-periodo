@@ -3,13 +3,13 @@ package canvas;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 
+import level.Level;
+
 import objects.ObjectBase;
 
 import buttons.Button;
 import buttons.actions.GoToMenu;
-import buttons.actions.levels.GoToLevel1;
-import buttons.actions.levels.GoToLevel2;
-import buttons.actions.levels.GoToLevel3;
+import buttons.actions.levels.GoToLevel;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
@@ -27,9 +27,26 @@ public class CanvasProgress extends CanvasBase{
 		Texture button1 = controller.getButtonTexture5();
 		Texture button2 = controller.getButtonTexture6();
 		
-		drawables.add(new Button(new GoToLevel1(controller), button1, button2, new Rectangle(100, 50, 100, 50)));
-		drawables.add(new Button(new GoToLevel2(controller), button1, button2, new Rectangle(100, 150, 100, 50)));
-		drawables.add(new Button(new GoToLevel3(controller), button1, button2, new Rectangle(100, 250, 100, 50)));
+		drawables.add(new Button(new GoToLevel(controller, "Level 1", "level1", "res/data/levels.json"), button1, button2, new Rectangle(20, 20, 100, 50)));
+		drawables.add(new Button(new GoToLevel(controller, "Level 2", "level2", "res/data/levels.json"), button1, button2, new Rectangle(20, 70, 100, 50)));
+		drawables.add(new Button(new GoToLevel(controller, "Level 3", "level3", "res/data/levels.json"), button1, button2, new Rectangle(20, 120, 100, 50)));
+		drawables.add(new Button(new GoToLevel(controller, "Level 4", "level4", "res/data/levels.json"), button1, button2, new Rectangle(20, 170, 100, 50)));
+		drawables.add(new Button(new GoToLevel(controller, "Level 5", "level5", "res/data/levels.json"), button1, button2, new Rectangle(20, 220, 100, 50)));
+		drawables.add(new Button(new GoToLevel(controller, "Level 6", "level6", "res/data/levels.json"), button1, button2, new Rectangle(20, 270, 100, 50)));
+		drawables.add(new Button(new GoToLevel(controller, "Level 7", "level7", "res/data/levels.json"), button1, button2, new Rectangle(20, 320, 100, 50)));
+		drawables.add(new Button(new GoToLevel(controller, "Level 8", "level8", "res/data/levels.json"), button1, button2, new Rectangle(20, 370, 100, 50)));
+		drawables.add(new Button(new GoToLevel(controller, "Level 9", "level9", "res/data/levels.json"), button1, button2, new Rectangle(220, 20, 100, 50)));
+		drawables.add(new Button(new GoToLevel(controller, "Level 10", "level10", "res/data/levels.json"), button1, button2, new Rectangle(220, 70, 100, 50)));
+		drawables.add(new Button(new GoToLevel(controller, "Level 11", "level11", "res/data/levels.json"), button1, button2, new Rectangle(220, 120, 100, 50)));
+		drawables.add(new Button(new GoToLevel(controller, "Level 12", "level12", "res/data/levels.json"), button1, button2, new Rectangle(220, 170, 100, 50)));
+		drawables.add(new Button(new GoToLevel(controller, "Level 13", "level13", "res/data/levels.json"), button1, button2, new Rectangle(220, 220, 100, 50)));
+		drawables.add(new Button(new GoToLevel(controller, "Level 14", "level14", "res/data/levels.json"), button1, button2, new Rectangle(220, 270, 100, 50)));
+		drawables.add(new Button(new GoToLevel(controller, "Level 15", "level15", "res/data/levels.json"), button1, button2, new Rectangle(220, 320, 100, 50)));
+		drawables.add(new Button(new GoToLevel(controller, "Level 16", "level16", "res/data/levels.json"), button1, button2, new Rectangle(220, 370, 100, 50)));
+		// drawables.add(new Button(new GoToLevel(controller, "Level 17", "level17", "res/data/levels.json"), button1, button2, new Rectangle(100, 250, 100, 50)));
+		// drawables.add(new Button(new GoToLevel(controller, "Level 18", "level18", "res/data/levels.json"), button1, button2, new Rectangle(100, 250, 100, 50)));
+		// drawables.add(new Button(new GoToLevel(controller, "Level 19", "level19", "res/data/levels.json"), button1, button2, new Rectangle(100, 250, 100, 50)));
+		// drawables.add(new Button(new GoToLevel(controller, "Level 20", "level20", "res/data/levels.json"), button1, button2, new Rectangle(100, 250, 100, 50)));
 		drawables.add(new Button(new GoToMenu(controller), button1, button2, new Rectangle(Main.width - 120, Main.height - 80, 50, 50)));
 	}
 	
@@ -46,6 +63,11 @@ public class CanvasProgress extends CanvasBase{
 		for(ObjectBase drawable : drawables){
 			ObjectBase temporaryDrawable = drawable;
 			temporaryDrawable.update(deltaTime);
+//			if(temporaryDrawable instanceof Level){
+//				if(((Level)temporaryDrawable).hasWon()){
+//					
+//				}
+//			}
 		}
 	}
 	

@@ -52,14 +52,13 @@ public class Hero extends ObjectBase{
 	
 	@Override
 	public void keyTyped(char character){
-		System.out.println("Keytyped "+character);
-		if(character == 'd'){
+		if(character == 'd' || character == 'D'){
 			move(DIR_RIGHT);
-		}else if(character == 'a'){
+		}else if(character == 'a' || character == 'A'){
 			move(DIR_LEFT);
-		}else if(character == 's'){
+		}else if(character == 's' || character == 'S'){
 			move(DIR_DOWN);
-		}else if(character == 'w'){
+		}else if(character == 'w' || character == 'W'){
 			move(DIR_UP);
 		}
 	}

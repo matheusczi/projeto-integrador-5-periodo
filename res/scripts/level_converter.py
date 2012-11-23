@@ -41,9 +41,8 @@ def convert(root,level_name=None):
 		CURRENT_CELL["y"] = 0
 		CURRENT_CELL["x"] = 0		
 		id = lvl.get("Id")
-		print("Id "+id)
 		
-		if ((level_name != id and not level_name) or level_name == id) and int(id) < 33:
+		if ((level_name != id and not level_name) or level_name == id) and int(id) <= 13:
 			width = int(lvl.get("Width"))
 			height = int(lvl.get("Height"))
 			

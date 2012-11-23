@@ -33,12 +33,17 @@ def write_file(filename, output):
 	return
 
 def convert(root,level_name=None):
+	global SOKOBAN_START_POSITION
+	global CURRENT_CELL
 	levels = {}
 
 	for lvl in root:
+		CURRENT_CELL["y"] = 0
+		CURRENT_CELL["x"] = 0		
 		id = lvl.get("Id")
+		print("Id "+id)
 		
-		if (level_name != id and not level_name) or level_name == id:
+		if ((level_name != id and not level_name) or level_name == id) and int(id) < 33:
 			width = int(lvl.get("Width"))
 			height = int(lvl.get("Height"))
 			
@@ -57,13 +62,16 @@ def convert(root,level_name=None):
 					grid["map"].append(tile)
 
 			character = createCharacter()
-			character["startPosition"] = SOKOBAN_START_POSITION
+			character["startPosition"]["x"] = SOKOBAN_START_POSITION["x"]
+			character["startPosition"]["y"] = SOKOBAN_START_POSITION["y"]
 
-			levels[id] = {"score":createScore(), "tiles":{}, "character":character, "grid":grid}
+			levels["level"+str(int(id)+3)] = {"score":createScore(), "tiles":{}, "character":character, "grid":grid}
 
 	return levels
 
 def createTile(cell):
+	global SOKOBAN_START_POSITION
+	global CURRENT_CELL
 	tile = {}
 	if cell == FLOOR:
 		tile = {"tile":"ground", "hasBlock":False, "isBlockTarget":False, "walkable":True}
@@ -77,10 +85,12 @@ def createTile(cell):
 		tile = {"tile":"ground", "hasBlock":True, "isBlockTarget":True, "walkable":True}
 	if cell == SOKOBAN:
 		tile = {"tile":"ground", "hasBlock":False, "isBlockTarget":False, "walkable":True}
-		SOKOBAN_START_POSITION = CURRENT_CELL
+		SOKOBAN_START_POSITION["x"] = CURRENT_CELL["x"]
+		SOKOBAN_START_POSITION["y"] = CURRENT_CELL["y"]
 	if cell == SOKOBAN_ON_GOAL:
 		tile = {"tile":"ground", "hasBlock":False, "isBlockTarget":True, "walkable":True}
-		SOKOBAN_START_POSITION = CURRENT_CELL
+		SOKOBAN_START_POSITION["x"] = CURRENT_CELL["x"]
+		SOKOBAN_START_POSITION["y"] = CURRENT_CELL["y"]
 
 	return tile
 

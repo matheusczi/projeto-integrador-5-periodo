@@ -11,6 +11,7 @@
 			"grass":"res/image_files/ground_07.png",
 			"start":"res/image_files/ground_04.png",
 			"block":"res/image_files/wooden_crate.png",
+            "blockOnTarget":"res/image_files/wooden_crate_green.png",
 			"target":"res/image_files/red_dot.png"
 		},
 		"character":{
@@ -27,6 +28,7 @@
 			"columns":10,
 			"block":"block",
 			"target":"target",
+            "blockOnTarget":"blockOnTarget",
 			"map":[
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
@@ -153,6 +155,7 @@
 			"grass":"res/image_files/ground_07.png",
 			"start":"res/image_files/ground_04.png",
 			"block":"res/image_files/wooden_crate.png",
+            "blockOnTarget":"res/image_files/wooden_crate_green.png",
 			"target":"res/image_files/red_dot.png"
 		},
 		"character":{
@@ -169,6 +172,7 @@
 			"columns":11,
 			"block":"block",
 			"target":"target",
+            "blockOnTarget":"blockOnTarget",
 			"map":[
 				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
@@ -317,6 +321,7 @@
 			"grass":"res/image_files/ground_07.png",
 			"start":"res/image_files/ground_04.png",
 			"block":"res/image_files/wooden_crate.png",
+            "blockOnTarget":"res/image_files/wooden_crate_green.png",
 			"target":"res/image_files/red_dot.png"
 		},
 		"character":{
@@ -333,6 +338,7 @@
 			"columns":8,
 			"block":"block",
 			"target":"target",
+            "blockOnTarget":"blockOnTarget",
 			"map":[
 				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},

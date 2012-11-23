@@ -59,6 +59,9 @@ public class LevelParser{
 					Cell block = null;
 					block = new Cell(grid.getString("block"), true, false, false);
 					level.setBlock(block);
+					Cell blockOnTarget = null;
+					blockOnTarget = new Cell(grid.getString("blockOnTarget"), true, false, false);
+					level.setBlockOnTarget(blockOnTarget);
 					Cell target = null;
 					target = new Cell(grid.getString("target"), false, false, false);
 					level.setTarget(target);

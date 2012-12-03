@@ -165,5 +165,9 @@ public class Level{
 			}
 		}
 		targetsToFill = sum;
+		
+		if(targetsToFill == 0){
+			controller.setCanvasByName(CanvasController.CANVAS_PROGRESS);
+		}
 	}
 }

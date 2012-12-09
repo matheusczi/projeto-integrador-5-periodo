@@ -29,13 +29,18 @@ public class CanvasSplash extends CanvasBase{
 		timerCount += deltaTime;
 		if(timerCount >= 1.75f){
 			timerCount = 0.0f;
-			controller.setCanvasByName(CanvasController.CANVAS_MENU);
+			goToProgressCanvas();
 		}
 	}
-	
+
 	@Override
 	public boolean keyTyped(char character){
-		controller.setCanvasByName(CanvasController.CANVAS_MENU);
+		goToProgressCanvas();
 		return super.keyTyped(character);
+	}
+	
+	private void goToProgressCanvas(){
+		controller.playBackgroundSound();
+		controller.setCanvasByName(CanvasController.CANVAS_MENU);
 	}
 }

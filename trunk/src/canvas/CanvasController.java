@@ -32,7 +32,7 @@ public class CanvasController{
 	private boolean backgroundSoundEnable;
 	private boolean effectSoundEnable;
 	
-	Sound backgroundSound = null;// Gdx.audio.newSound(Gdx.files.internal("res/sound_files/Instrumentos.wav"));
+	Sound backgroundSound = Gdx.audio.newSound(Gdx.files.internal("res/sound_files/background.wav"));
 	Sound moveSound = Gdx.audio.newSound(Gdx.files.internal("res/sound_files/move.wav"));
 	Sound moveBoxSound = Gdx.audio.newSound(Gdx.files.internal("res/sound_files/movebox.wav"));
 	Sound colideWallSound = Gdx.audio.newSound(Gdx.files.internal("res/sound_files/colidewall.wav"));
@@ -174,6 +174,11 @@ public class CanvasController{
 	
 	public void toogleBackgroundSound(){
 		backgroundSoundEnable = ! backgroundSoundEnable;
+		if(backgroundSoundEnable){
+			backgroundSound.loop(0.5f);
+		}else{
+			backgroundSound.stop();
+		}
 	}
 	
 	public void toogleEffectSound(){
@@ -187,7 +192,7 @@ public class CanvasController{
 	
 	public void playBackgroundSound(){
 		if(backgroundSoundEnable){
-			backgroundSound.play();
+			backgroundSound.loop(0.5f);
 		}
 	}
 	

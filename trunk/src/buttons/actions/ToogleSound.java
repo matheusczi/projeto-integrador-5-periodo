@@ -12,6 +12,6 @@ public class ToogleSound extends Actionable{
 	
 	@Override
 	public void action(){
-		controller.toogleEffectSound();
+		controller.toogleSound();
 	}
 }

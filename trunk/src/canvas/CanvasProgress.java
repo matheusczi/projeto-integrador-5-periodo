@@ -3,15 +3,11 @@ package canvas;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 
-import level.Level;
-
 import objects.ObjectBase;
-
 import buttons.Button;
 import buttons.actions.GoToMenu;
 import buttons.actions.levels.GoToLevel;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -63,11 +59,12 @@ public class CanvasProgress extends CanvasBase{
 		for(ObjectBase drawable : drawables){
 			ObjectBase temporaryDrawable = drawable;
 			temporaryDrawable.update(deltaTime);
-//			if(temporaryDrawable instanceof Level){
-//				if(((Level)temporaryDrawable).hasWon()){
-//					
-//				}
-//			}
+			
+			// if(temporaryDrawable instanceof Level){
+			// if(((Level)temporaryDrawable).hasWon()){
+			//
+			// }
+			// }
 		}
 	}
 	

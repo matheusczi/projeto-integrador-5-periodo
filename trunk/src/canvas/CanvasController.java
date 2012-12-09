@@ -1,6 +1,7 @@
 package canvas;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 
 public class CanvasController{
@@ -27,7 +28,15 @@ public class CanvasController{
 	private Texture buttonTexture4;
 	private Texture buttonTexture5;
 	private Texture buttonTexture6;
-
+	
+	private boolean backgroundSoundEnable;
+	private boolean effectSoundEnable;
+	
+	Sound backgroundSound = null;// Gdx.audio.newSound(Gdx.files.internal("res/sound_files/Instrumentos.wav"));
+	Sound moveSound = Gdx.audio.newSound(Gdx.files.internal("res/sound_files/move.wav"));
+	Sound moveBoxSound = Gdx.audio.newSound(Gdx.files.internal("res/sound_files/movebox.wav"));
+	Sound colideWallSound = Gdx.audio.newSound(Gdx.files.internal("res/sound_files/colidewall.wav"));
+	Sound winLevelSound = Gdx.audio.newSound(Gdx.files.internal("res/sound_files/winlevel.wav"));
 	
 	public CanvasController(){
 		canvasSplash = new CanvasSplash(this);
@@ -36,6 +45,8 @@ public class CanvasController{
 		canvasProgress = new CanvasProgress(this);
 		canvasGame = new CanvasGame(this);
 		activeCanvas = canvasSplash;
+		backgroundSoundEnable = true;
+		effectSoundEnable = true;
 	}
 	
 	public CanvasBase getCanvas(){
@@ -105,7 +116,7 @@ public class CanvasController{
 	
 	public Texture getButtonTexture6(){
 		if(buttonTexture6 == null){
-			buttonTexture6= new Texture(Gdx.files.internal("res/image_files/buttons/button4.png"));
+			buttonTexture6 = new Texture(Gdx.files.internal("res/image_files/buttons/button4.png"));
 		}
 		return buttonTexture6;
 	}
@@ -126,11 +137,81 @@ public class CanvasController{
 		return activeCanvas;
 	}
 	
+	public CanvasBase setCanvasByName(String name, boolean playWin){
+		if(playWin){
+			playWinLevel();
+			try{
+				Thread.sleep(2250);
+			}catch(InterruptedException e){
+				e.printStackTrace();
+			}
+		}
+		
+		return setCanvasByName(name);
+	}
+	
 	public void dispose(){
 		canvasSplash.dispose();
 		canvasMenu.dispose();
 		canvasOptions.dispose();
 		canvasProgress.dispose();
 		canvasGame.dispose();
+		
+		backgroundSound.dispose();
+		moveSound.dispose();
+		moveBoxSound.dispose();
+		colideWallSound.dispose();
+		winLevelSound.dispose();
+	}
+	
+	public boolean getBackgroundSoundEnable(){
+		return backgroundSoundEnable;
+	}
+	
+	public boolean getEffectSoundEnable(){
+		return effectSoundEnable;
+	}
+	
+	public void toogleBackgroundSound(){
+		backgroundSoundEnable = ! backgroundSoundEnable;
+	}
+	
+	public void toogleEffectSound(){
+		effectSoundEnable = ! effectSoundEnable;
+	}
+	
+	public void toogleSound(){
+		toogleBackgroundSound();
+		toogleEffectSound();
+	}
+	
+	public void playBackgroundSound(){
+		if(backgroundSoundEnable){
+			backgroundSound.play();
+		}
+	}
+	
+	public void playMove(){
+		if(effectSoundEnable){
+			moveSound.play();
+		}
+	}
+	
+	public void playMoveBox(){
+		if(effectSoundEnable){
+			moveBoxSound.play();
+		}
+	}
+	
+	public void playColideWall(){
+		if(effectSoundEnable){
+			colideWallSound.play();
+		}
+	}
+	
+	public void playWinLevel(){
+		if(effectSoundEnable){
+			winLevelSound.play();
+		}
 	}
 }

@@ -27,7 +27,7 @@ public class Level{
 	public static int grid_offset_x = 0;
 	public static int grid_offset_y = 0;
 	
-	private int targetsToFill = -1;
+	private int targetsToFill = - 1;
 	
 	private Hero hero = null;
 	private CanvasController controller = null;
@@ -47,38 +47,35 @@ public class Level{
 		grid_offset_y = screen_center_y - (cell_height * rows / 2);
 	}
 	
-	public boolean moveTo(int to_x, int to_y, int from_x, int from_y){
-		if(hasWon())
-			return false;
-		
+	public int moveTo(int to_x, int to_y, int from_x, int from_y){
 		// pode andar na posicao desejada?
 		if(grid[to_x][to_y].isWalkable){
 			// a posicao desejada tem bloco?
 			if(grid[to_x][to_y].hasBlock){
 				// a posicao de onde venho tem um bloco?
 				if(grid[from_x][from_y].hasBlock){
-					return false;
+					return 0;
 				}else{
 					// posso mover bloco no mesmo sentido?
-					if(moveTo(to_x + (to_x - from_x), to_y + (to_y - from_y), to_x, to_y)){
+					if(moveTo(to_x + (to_x - from_x), to_y + (to_y - from_y), to_x, to_y) != 0){
 						// mover bloco
 						grid[to_x][to_y].hasBlock = false;
 						grid[to_x + (to_x - from_x)][to_y + (to_y - from_y)].hasBlock = true;
 						controller.getCanvasGame().addMoves();
 						// pode mover boneco ;)
-						return true;
+						return 2;
 					}else{
-						return false;
+						return 0;
 					}
 				}
 			}else{
 				// posso mover
 				controller.getCanvasGame().addSteps();
-				return true;
+				return 1;
 			}
 		}
 		// nah
-		return false;
+		return 0;
 	}
 	
 	public boolean hasWon(){
@@ -124,13 +121,11 @@ public class Level{
 		int dest_y = 0;
 		for(int i = 0; i < columns; i++){
 			for(int j = 0; j < rows; j++){
-				// System.out.println("x: "+i*cell_width+" y: "+j*cell_height);
+				
 				Cell c = grid[i][j];
 				Texture t = res.assets.get(c.tile);
 				dest_x = grid_offset_x + (i * (cell_width));
-				// inverted y axis minus offset from screen center minus height minus magic number from
-				// power of two textures
-				// XXX - don`t do this at home
+				
 				dest_y = Main.height - grid_offset_y - (j * (cell_height)) - 64;
 				spriteBatch.draw(t, dest_x, dest_y);
 				if(c.isBlockTarget && c.hasBlock){
@@ -149,6 +144,10 @@ public class Level{
 	}
 	
 	public void update(float deltaTime){
+		if(hasWon()){
+			controller.setCanvasByName(CanvasController.CANVAS_PROGRESS, true);
+		}
+		
 		hero.update(deltaTime);
 		Cell c = null;
 		int sum = 0;
@@ -160,14 +159,10 @@ public class Level{
 					sum++;
 					if(c.hasBlock){
 						sum--;
-					}	
+					}
 				}
 			}
 		}
 		targetsToFill = sum;
-		
-		if(targetsToFill == 0){
-			controller.setCanvasByName(CanvasController.CANVAS_PROGRESS);
-		}
 	}
 }

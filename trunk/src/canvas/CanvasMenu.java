@@ -3,18 +3,16 @@ package canvas;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 
+import objects.ObjectBase;
 import buttons.Button;
 import buttons.actions.GoToExit;
 import buttons.actions.GoToOptions;
 import buttons.actions.GoToProgress;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import core.Main;
-
-import objects.ObjectBase;
 
 public class CanvasMenu extends CanvasBase{
 	private ArrayList<ObjectBase> drawables;

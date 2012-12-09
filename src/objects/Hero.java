@@ -6,6 +6,8 @@ import level.Level;
 
 import objects.ObjectBase;
 
+import canvas.CanvasController;
+
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -26,10 +28,12 @@ public class Hero extends ObjectBase{
 	protected int tileWidth;
 	protected int tileHeight;
 	
-	// reference to parent level -- XXX
 	private Level lvl = null;
 	
-	public Hero(){
+	private CanvasController controller;
+	
+	public Hero(CanvasController controller){
+		this.controller = controller;
 		this.bounds = new Rectangle(0, 0, Level.cell_width, Level.cell_height);
 	}
 	
@@ -52,39 +56,54 @@ public class Hero extends ObjectBase{
 	
 	@Override
 	public void keyTyped(char character){
+		int resultMove = 0;
 		if(character == 'd' || character == 'D'){
-			move(DIR_RIGHT);
+			resultMove = move(DIR_RIGHT);
 		}else if(character == 'a' || character == 'A'){
-			move(DIR_LEFT);
+			resultMove = move(DIR_LEFT);
 		}else if(character == 's' || character == 'S'){
-			move(DIR_DOWN);
+			resultMove = move(DIR_DOWN);
 		}else if(character == 'w' || character == 'W'){
-			move(DIR_UP);
+			resultMove = move(DIR_UP);
+		}
+		
+		if(resultMove == 1){
+			controller.playMove();
+		}else if(resultMove == 2){
+			controller.playMoveBox();
+		}else{
+			controller.playColideWall();
 		}
 	}
 	
-	private void move(int dir){
+	private int move(int dir){
+		int result = 0;
 		if(dir == DIR_UP){
 			direction = DIR_UP;
-			if(lvl.moveTo(bounds.x, bounds.y - 1, bounds.x, bounds.y)){
+			result = lvl.moveTo(bounds.x, bounds.y - 1, bounds.x, bounds.y);
+			if(result != 0){
 				bounds.y--;
 			}
 		}else if(dir == DIR_DOWN){
 			direction = DIR_DOWN;
-			if(lvl.moveTo(bounds.x, bounds.y + 1, bounds.x, bounds.y)){
+			result = lvl.moveTo(bounds.x, bounds.y + 1, bounds.x, bounds.y);
+			if(result != 0){
 				bounds.y++;
 			}
 		}else if(dir == DIR_LEFT){
 			direction = DIR_LEFT;
-			if(lvl.moveTo(bounds.x - 1, bounds.y, bounds.x, bounds.y)){
+			result = lvl.moveTo(bounds.x - 1, bounds.y, bounds.x, bounds.y);
+			if(result != 0){
 				bounds.x--;
 			}
 		}else if(dir == DIR_RIGHT){
 			direction = DIR_RIGHT;
-			if(lvl.moveTo(bounds.x + 1, bounds.y, bounds.x, bounds.y)){
+			result = lvl.moveTo(bounds.x + 1, bounds.y, bounds.x, bounds.y);
+			if(result != 0){
 				bounds.x++;
 			}
 		}
+		return result;
 	}
 	
 	public void setSprite(Texture texture){

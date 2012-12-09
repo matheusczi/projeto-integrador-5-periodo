@@ -8,6 +8,7 @@ import core.Main;
 
 public class CanvasSplash extends CanvasBase{
 	ShapeRenderer renderer;
+	private float timerCount;
 	
 	public CanvasSplash(CanvasController controller){
 		super(controller);
@@ -21,6 +22,15 @@ public class CanvasSplash extends CanvasBase{
 		renderer.filledRect(0, 0, Main.width, Main.height);
 		renderer.end();
 		super.render(spriteBatch);
+	}
+	
+	@Override
+	public void update(float deltaTime){
+		timerCount += deltaTime;
+		if(timerCount >= 1.75f){
+			timerCount = 0.0f;
+			controller.setCanvasByName(CanvasController.CANVAS_MENU);
+		}
 	}
 	
 	@Override

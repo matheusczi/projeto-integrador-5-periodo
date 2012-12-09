@@ -6,9 +6,10 @@ import java.util.ArrayList;
 import objects.ObjectBase;
 import buttons.Button;
 import buttons.actions.GoToMenu;
+import buttons.actions.ToogleBackgroundSound;
+import buttons.actions.ToogleEffectSound;
+import buttons.actions.ToogleSound;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import core.Main;
@@ -20,6 +21,11 @@ public class CanvasOptions extends CanvasBase{
 		super(controller);
 		drawables = new ArrayList<ObjectBase>();
 		drawables.add(new Button(new GoToMenu(controller), controller.getButtonTexture5(), controller.getButtonTexture6(), new Rectangle(Main.width - 120, Main.height - 80, 50, 50)));
+
+		
+		drawables.add(new Button(new ToogleBackgroundSound(controller), controller.getButtonTexture5(), controller.getButtonTexture6(), new Rectangle(70, 50, 100, 100)));
+		drawables.add(new Button(new ToogleEffectSound(controller), controller.getButtonTexture5(), controller.getButtonTexture6(), new Rectangle(70, 180, 100, 100)));
+		drawables.add(new Button(new ToogleSound(controller), controller.getButtonTexture5(), controller.getButtonTexture6(), new Rectangle(70, 310, 100, 100)));
 	}
 	
 	@Override

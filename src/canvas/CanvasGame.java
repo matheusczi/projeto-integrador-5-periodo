@@ -4,15 +4,11 @@ import java.awt.Rectangle;
 import java.util.ArrayList;
 
 import level.Level;
-
-import objects.ObjectBase;
 import objects.Hero;
-
+import objects.ObjectBase;
 import buttons.Button;
 import buttons.actions.GoToMenuSurrending;
 
-import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -20,8 +16,6 @@ import core.Main;
 
 public class CanvasGame extends CanvasBase{
 	private ArrayList<ObjectBase> drawables = null;
-	private ArrayList<Music> musics = null;
-	private ArrayList<Sound> audioEffects = null;
 	private Level level = null;
 	
 	private Hero hero = null;
@@ -37,20 +31,9 @@ public class CanvasGame extends CanvasBase{
 	public CanvasGame(CanvasController controller){
 		super(controller);
 		drawables = new ArrayList<ObjectBase>();
-		musics = new ArrayList<Music>();
-		audioEffects = new ArrayList<Sound>();
 		
 		drawables.add(new Button(new GoToMenuSurrending(controller), controller.getButtonTexture3(), controller.getButtonTexture4(), new Rectangle(Main.width - 150, Main.height - 80, 50, 50)));
 		font = new BitmapFont();
-		
-		// Music music = Gdx.audio.newMusic(Gdx.files.internal("res/sound_files/Enya - Carribean Blue.mp3"));
-		// musics.add(music);
-		// music.setLooping(true);
-		// music.play();
-		
-		// Sound sound = Gdx.audio.newSound(Gdx.files.internal("res/sound_files/Instrumentos.wav"));
-		// audioEffects.add(sound);
-		// sound.play();
 	}
 	
 	public void setLevel(Level level){
@@ -95,25 +78,13 @@ public class CanvasGame extends CanvasBase{
 		for(ObjectBase drawable : drawables){
 			drawable.dispose();
 		}
-		
-		for(Music music : musics){
-			if(music != null){
-				music.dispose();
-			}
-		}
-		
-		for(Sound sound : audioEffects){
-			if(sound != null){
-				sound.dispose();
-			}
-		}
 	}
 	
 	@Override
 	public boolean keyTyped(char character){
 		for(ObjectBase drawable : drawables){
 			drawable.keyTyped(character);
-		}		
+		}
 		return super.keyTyped(character);
 	}
 	
@@ -135,7 +106,7 @@ public class CanvasGame extends CanvasBase{
 	
 	public Hero getHero(){
 		if(hero == null){
-			hero = new Hero();
+			hero = new Hero(controller);
 			drawables.add(hero);
 		}
 		return hero;

@@ -21,17 +21,17 @@ public class CanvasMenu extends CanvasBase{
 		super(controller);
 		drawables = new ArrayList<ObjectBase>();
 		
-		Texture button1 = controller.getButtonTexture5();
-		Texture button2 = controller.getButtonTexture6();
+		Texture button1 = controller.getButtonTexture11();
+		Texture button2 = controller.getButtonTexture12();
 		
-		drawables.add(new Button(new GoToProgress(controller), button1, button2, new Rectangle(70, 50, 100, 100)));
-		drawables.add(new Button(new GoToOptions(controller), button1, button2, new Rectangle(70, 180, 100, 100)));
+		drawables.add(new Button(new GoToProgress(controller), button1, button2, new Rectangle(70, 80, 109, 30)));
+		drawables.add(new Button(new GoToOptions(controller), button1, button2, new Rectangle(70, 120, 109, 30)));
 		drawables.add(new Button(new GoToExit(controller), button1, button2, new Rectangle(Main.width - 120, Main.height - 80, 50, 50)));
 	}
 	
 	@Override
 	public void render(SpriteBatch spriteBatch){
-		spriteBatch.draw(controller.getBackGroundTexture1(), 0, 0);
+		spriteBatch.draw(controller.getBackGroundTexture3(), 0, 0);
 		for(ObjectBase drawable : drawables){
 			drawable.render(spriteBatch);
 		}

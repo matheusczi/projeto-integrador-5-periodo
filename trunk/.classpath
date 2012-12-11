@@ -7,5 +7,7 @@
 	<classpathentry kind="lib" path="lib/gdx-natives.jar"/>
 	<classpathentry kind="lib" path="lib/gdx-sources.jar"/>
 	<classpathentry kind="lib" path="lib/gdx.jar"/>
+	<classpathentry kind="lib" path="lib/gdx-stb-truetype-natives.jar"/>
+	<classpathentry kind="lib" path="lib/gdx-stb-truetype.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

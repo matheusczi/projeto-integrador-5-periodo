@@ -32,7 +32,7 @@ public class CanvasGame extends CanvasBase{
 		super(controller);
 		drawables = new ArrayList<ObjectBase>();
 		
-		drawables.add(new Button(new GoToMenuSurrending(controller), controller.getButtonTexture3(), controller.getButtonTexture4(), new Rectangle(Main.width - 150, Main.height - 80, 50, 50)));
+		drawables.add(new Button(new GoToMenuSurrending(controller), controller.getButtonTexture14(), controller.getButtonTexture13(), new Rectangle(Main.width - 150, Main.height - 80, 50, 50)));
 		font = new BitmapFont();
 	}
 	

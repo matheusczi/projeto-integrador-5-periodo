@@ -6,9 +6,11 @@ import objects.ObjectBase;
 
 import buttons.actions.Actionable;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.stbtt.TrueTypeFontFactory;
 
 import core.Main;
 
@@ -19,7 +21,8 @@ public class Button extends ObjectBase{
 	private Texture activeTexture;
 	private boolean executeAction;
 	private boolean touchHover;
-	private BitmapFont font;
+	BitmapFont font;
+	public static final String FONT_CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789][_!$%#@|\\/?-+=()*&.;,{}\"´`'<>";
 	
 	public Button(Actionable action, Texture background, Texture hover, Rectangle bounds){
 		this.action = action;
@@ -29,7 +32,8 @@ public class Button extends ObjectBase{
 		this.bounds = bounds;
 		this.executeAction = false;
 		this.touchHover = false;
-		this.font = new BitmapFont();
+		font = TrueTypeFontFactory.createBitmapFont(Gdx.files.internal("res/font/Capture it.ttf"), FONT_CHARACTERS, 21.0f, 15.0f, 0.5f, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+//		font = TrueTypeFontFactory.createBitmapFont(Gdx.files.internal("res/font/Base 02.ttf"), FONT_CHARACTERS, 38.5f, 28.0f, 1.0f, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 	}
 	
 	@Override
@@ -37,7 +41,7 @@ public class Button extends ObjectBase{
 		int y = Main.height - bounds.height - bounds.y;
 		spriteBatch.draw(activeTexture, bounds.x, y, bounds.width, bounds.height);
 		font.setColor(1.0f, 1.0f, 1.0f, 1.0f);
-		font.draw(spriteBatch, action.getText(), bounds.x + bounds.width + 10, y + bounds.height/2 + 5);
+		font.draw(spriteBatch, action.getText(), bounds.x + bounds.width + 10, y + bounds.height/2 - 7);
 	}
 	
 	@Override

@@ -28,6 +28,14 @@ public class CanvasController{
 	private Texture buttonTexture4;
 	private Texture buttonTexture5;
 	private Texture buttonTexture6;
+	private Texture buttonTexture7;
+	private Texture buttonTexture8;
+	private Texture buttonTexture9;
+	private Texture buttonTexture10;
+	private Texture buttonTexture11;
+	private Texture buttonTexture12;
+	private Texture buttonTexture13;
+	private Texture buttonTexture14;
 	
 	private boolean backgroundSoundEnable;
 	private boolean effectSoundEnable;
@@ -74,7 +82,7 @@ public class CanvasController{
 	
 	public Texture getBackGroundTexture3(){
 		if(backGroundTexture3 == null){
-			backGroundTexture3 = new Texture(Gdx.files.internal("res/image_files/background5.jpg"));
+			backGroundTexture3 = new Texture(Gdx.files.internal("res/image_files/backgroundMenu.jpg"));
 		}
 		return backGroundTexture3;
 	}
@@ -119,6 +127,62 @@ public class CanvasController{
 			buttonTexture6 = new Texture(Gdx.files.internal("res/image_files/buttons/button4.png"));
 		}
 		return buttonTexture6;
+	}
+	
+	public Texture getButtonTexture7(){
+		if(buttonTexture7 == null){
+			buttonTexture7 = new Texture(Gdx.files.internal("res/image_files/buttons/botao01.png"));
+		}
+		return buttonTexture7;
+	}
+	
+	public Texture getButtonTexture8(){
+		if(buttonTexture8 == null){
+			buttonTexture8 = new Texture(Gdx.files.internal("res/image_files/buttons/botao02.png"));
+		}
+		return buttonTexture8;
+	}
+	
+	public Texture getButtonTexture9(){
+		if(buttonTexture9 == null){
+			buttonTexture9 = new Texture(Gdx.files.internal("res/image_files/buttons/botao03.png"));
+		}
+		return buttonTexture9;
+	}
+	
+	public Texture getButtonTexture10(){
+		if(buttonTexture10 == null){
+			buttonTexture10 = new Texture(Gdx.files.internal("res/image_files/buttons/botao04.png"));
+		}
+		return buttonTexture10;
+	}
+	
+	public Texture getButtonTexture11(){
+		if(buttonTexture11 == null){
+			buttonTexture11 = new Texture(Gdx.files.internal("res/image_files/buttons/botao05.png"));
+		}
+		return buttonTexture11;
+	}
+	
+	public Texture getButtonTexture12(){
+		if(buttonTexture12 == null){
+			buttonTexture12 = new Texture(Gdx.files.internal("res/image_files/buttons/botao06.png"));
+		}
+		return buttonTexture12;
+	}
+	
+	public Texture getButtonTexture13(){
+		if(buttonTexture13 == null){
+			buttonTexture13 = new Texture(Gdx.files.internal("res/image_files/buttons/botao07.png"));
+		}
+		return buttonTexture13;
+	}
+	
+	public Texture getButtonTexture14(){
+		if(buttonTexture14 == null){
+			buttonTexture14 = new Texture(Gdx.files.internal("res/image_files/buttons/botao08.png"));
+		}
+		return buttonTexture14;
 	}
 	
 	public CanvasBase setCanvasByName(String name){

@@ -20,12 +20,12 @@ public class CanvasOptions extends CanvasBase{
 	public CanvasOptions(CanvasController controller){
 		super(controller);
 		drawables = new ArrayList<ObjectBase>();
-		drawables.add(new Button(new GoToMenu(controller), controller.getButtonTexture5(), controller.getButtonTexture6(), new Rectangle(Main.width - 120, Main.height - 80, 50, 50)));
+		drawables.add(new Button(new GoToMenu(controller), controller.getButtonTexture9(), controller.getButtonTexture10(), new Rectangle(Main.width - 120, Main.height - 80, 50, 50)));
 
 		
-		drawables.add(new Button(new ToogleBackgroundSound(controller), controller.getButtonTexture5(), controller.getButtonTexture6(), new Rectangle(70, 50, 100, 100)));
-		drawables.add(new Button(new ToogleEffectSound(controller), controller.getButtonTexture5(), controller.getButtonTexture6(), new Rectangle(70, 180, 100, 100)));
-		drawables.add(new Button(new ToogleSound(controller), controller.getButtonTexture5(), controller.getButtonTexture6(), new Rectangle(70, 310, 100, 100)));
+		drawables.add(new Button(new ToogleBackgroundSound(controller), controller.getButtonTexture9(), controller.getButtonTexture10(), new Rectangle(70, 50, 109, 30)));
+		drawables.add(new Button(new ToogleEffectSound(controller), controller.getButtonTexture9(), controller.getButtonTexture10(), new Rectangle(70, 90, 109, 30)));
+		drawables.add(new Button(new ToogleSound(controller), controller.getButtonTexture9(), controller.getButtonTexture10(), new Rectangle(70, 130, 109, 30)));
 	}
 	
 	@Override

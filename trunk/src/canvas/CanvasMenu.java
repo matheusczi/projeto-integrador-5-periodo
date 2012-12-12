@@ -24,9 +24,11 @@ public class CanvasMenu extends CanvasBase{
 		Texture button1 = controller.getButtonTexture11();
 		Texture button2 = controller.getButtonTexture12();
 		
-		drawables.add(new Button(new GoToProgress(controller), button1, button2, new Rectangle(70, 80, 109, 30)));
-		drawables.add(new Button(new GoToOptions(controller), button1, button2, new Rectangle(70, 120, 109, 30)));
-		drawables.add(new Button(new GoToExit(controller), button1, button2, new Rectangle(Main.width - 120, Main.height - 80, 50, 50)));
+		Button b = new Button(new GoToProgress(controller), button1, button2, new Rectangle(320, 180, 50, 30));
+		b.action.setName("Play");
+		drawables.add(b);
+		drawables.add(new Button(new GoToOptions(controller), button1, button2, new Rectangle(320, 250, 50, 30)));
+		drawables.add(new Button(new GoToExit(controller), button1, button2, new Rectangle(320, 320, 50, 30)));
 	}
 	
 	@Override

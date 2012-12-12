@@ -1,5 +1,9 @@
 package canvas;
 
+import java.util.ArrayList;
+
+import objects.ObjectBase;
+
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
@@ -7,21 +11,20 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import core.Main;
 
 public class CanvasSplash extends CanvasBase{
-	ShapeRenderer renderer;
 	private float timerCount;
+	private ArrayList<ObjectBase> drawables;
 	
 	public CanvasSplash(CanvasController controller){
 		super(controller);
-		renderer = new ShapeRenderer();
+		drawables = new ArrayList<ObjectBase>();
 	}
 	
 	@Override
 	public void render(SpriteBatch spriteBatch){
-		renderer.begin(ShapeType.FilledRectangle);
-		renderer.setColor(0.0f, 0.1f, 0.05f, 1);
-		renderer.filledRect(0, 0, Main.width, Main.height);
-		renderer.end();
-		super.render(spriteBatch);
+		spriteBatch.draw(controller.getBackGroundTexture6(), 0, 0);
+		for(ObjectBase drawable : drawables){
+			drawable.render(spriteBatch);
+		}
 	}
 	
 	@Override
@@ -30,6 +33,12 @@ public class CanvasSplash extends CanvasBase{
 		if(timerCount >= 1.75f){
 			timerCount = 0.0f;
 			goToProgressCanvas();
+		}
+	}
+	@Override
+	public void dispose(){
+		for(ObjectBase drawable : drawables){
+			drawable.dispose();
 		}
 	}
 

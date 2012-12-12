@@ -21,6 +21,8 @@ public class CanvasController{
 	private Texture backGroundTexture1;
 	private Texture backGroundTexture2;
 	private Texture backGroundTexture3;
+	private Texture backGroundTexture4;
+	private Texture backGroundTexture6;
 	
 	private Texture buttonTexture1;
 	private Texture buttonTexture2;
@@ -45,14 +47,16 @@ public class CanvasController{
 	Sound moveBoxSound = Gdx.audio.newSound(Gdx.files.internal("res/sound_files/movebox.wav"));
 	Sound colideWallSound = Gdx.audio.newSound(Gdx.files.internal("res/sound_files/colidewall.wav"));
 	Sound winLevelSound = Gdx.audio.newSound(Gdx.files.internal("res/sound_files/winlevel.wav"));
+	private Texture backGroundTexture5;
 	
 	public CanvasController(){
 		canvasSplash = new CanvasSplash(this);
+		activeCanvas = canvasSplash;
 		canvasMenu = new CanvasMenu(this);
 		canvasOptions = new CanvasOptions(this);
 		canvasProgress = new CanvasProgress(this);
 		canvasGame = new CanvasGame(this);
-		activeCanvas = canvasSplash;
+		
 		backgroundSoundEnable = true;
 		effectSoundEnable = true;
 	}
@@ -85,6 +89,27 @@ public class CanvasController{
 			backGroundTexture3 = new Texture(Gdx.files.internal("res/image_files/backgroundMenu.jpg"));
 		}
 		return backGroundTexture3;
+	}
+	//eu odeio essa merda de codigo
+	public Texture getBackGroundTexture4(){
+		if(backGroundTexture4 == null){
+			backGroundTexture4 = new Texture(Gdx.files.internal("res/image_files/backgroundProgress.jpg"));
+		}
+		return backGroundTexture4;
+	}
+	
+	public Texture getBackGroundTexture5(){
+		if(backGroundTexture5 == null){
+			backGroundTexture5 = new Texture(Gdx.files.internal("res/image_files/backgroundOptions.jpg"));
+		}
+		return backGroundTexture5;
+	}
+	
+	public Texture getBackGroundTexture6(){
+		if(backGroundTexture6 == null){
+			backGroundTexture6 = new Texture(Gdx.files.internal("res/image_files/background.jpg"));
+		}
+		return backGroundTexture6;
 	}
 	
 	public Texture getButtonTexture1(){

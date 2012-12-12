@@ -84,12 +84,12 @@ def createTile(cell):
 		tile = {"tile":"ground", "hasBlock":True, "isBlockTarget":True, "walkable":True}
 	if cell == SOKOBAN:
 		tile = {"tile":"ground", "hasBlock":False, "isBlockTarget":False, "walkable":True}
-		SOKOBAN_START_POSITION["x"] = CURRENT_CELL["x"]
-		SOKOBAN_START_POSITION["y"] = CURRENT_CELL["y"]
+		SOKOBAN_START_POSITION["x"] = CURRENT_CELL["x"] - 1
+		SOKOBAN_START_POSITION["y"] = CURRENT_CELL["y"] - 1
 	if cell == SOKOBAN_ON_GOAL:
 		tile = {"tile":"ground", "hasBlock":False, "isBlockTarget":True, "walkable":True}
-		SOKOBAN_START_POSITION["x"] = CURRENT_CELL["x"]
-		SOKOBAN_START_POSITION["y"] = CURRENT_CELL["y"]
+		SOKOBAN_START_POSITION["x"] = CURRENT_CELL["x"] - 1
+		SOKOBAN_START_POSITION["y"] = CURRENT_CELL["y"] - 1
 
 	return tile
 

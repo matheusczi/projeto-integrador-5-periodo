@@ -7,12 +7,13 @@
 		},
 		"tiles":{
 			"ground":"res/image_files/ground_05.png",
-			"wall":"res/image_files/ground_04.png",
+			"wall":"res/image_files/brick_wall.png",
 			"grass":"res/image_files/ground_07.png",
-			"start":"res/image_files/ground_04.png",
+			"start":"res/image_files/brick_wall.png",
 			"block":"res/image_files/wooden_crate.png",
             "blockOnTarget":"res/image_files/wooden_crate_green.png",
-			"target":"res/image_files/red_dot.png"
+			"target":"res/image_files/red_dot.png",
+			"transparent":"res/image_files/transparent.png"
 		},
 		"character":{
 			"sprite":"res/image_files/hero.png",
@@ -151,12 +152,13 @@
 		},
 		"tiles":{
 			"ground":"res/image_files/ground_05.png",
-			"wall":"res/image_files/ground_04.png",
+			"wall":"res/image_files/brick_wall.png",
 			"grass":"res/image_files/ground_07.png",
-			"start":"res/image_files/ground_04.png",
+			"start":"res/image_files/brick_wall.png",
 			"block":"res/image_files/wooden_crate.png",
             "blockOnTarget":"res/image_files/wooden_crate_green.png",
-			"target":"res/image_files/red_dot.png"
+			"target":"res/image_files/red_dot.png",
+			"transparent":"res/image_files/transparent.png"
 		},
 		"character":{
 			"sprite":"res/image_files/hero.png",
@@ -174,32 +176,32 @@
 			"target":"target",
             "blockOnTarget":"blockOnTarget",
 			"map":[
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
@@ -208,10 +210,10 @@
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":true, "isBlockTarget":false, "walkable":true},
@@ -220,10 +222,10 @@
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
@@ -232,9 +234,9 @@
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":true, "walkable":true},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
@@ -244,67 +246,67 @@
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":true, "walkable":true},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":true, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":true, "walkable":true},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":true, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				
 			]
 		}
@@ -317,12 +319,13 @@
 		},
 		"tiles":{
 			"ground":"res/image_files/ground_05.png",
-			"wall":"res/image_files/ground_04.png",
+			"wall":"res/image_files/brick_wall.png",
 			"grass":"res/image_files/ground_07.png",
-			"start":"res/image_files/ground_04.png",
+			"start":"res/image_files/brick_wall.png",
 			"block":"res/image_files/wooden_crate.png",
             "blockOnTarget":"res/image_files/wooden_crate_green.png",
-			"target":"res/image_files/red_dot.png"
+			"target":"res/image_files/red_dot.png",
+			"transparent":"res/image_files/transparent.png"
 		},
 		"character":{
 			"sprite":"res/image_files/hero.png",
@@ -340,14 +343,14 @@
 			"target":"target",
             "blockOnTarget":"blockOnTarget",
 			"map":[
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
@@ -356,7 +359,7 @@
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
@@ -385,8 +388,8 @@
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
 				{"tile":"ground", "hasBlock":false, "isBlockTarget":false, "walkable":true},
@@ -394,14 +397,14 @@
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 				{"tile":"wall", "hasBlock":false, "isBlockTarget":false, "walkable":false},
-				{"tile":"grass", "hasBlock":false, "isBlockTarget":false, "walkable":false},
+				{"tile":"transparent", "hasBlock":false, "isBlockTarget":false, "walkable":false},
 			]
 		}
 	},
@@ -480,12 +483,13 @@
         }, 
         "tiles": {
 			"ground":"res/image_files/ground_05.png",
-			"wall":"res/image_files/ground_04.png",
+			"wall":"res/image_files/brick_wall.png",
 			"grass":"res/image_files/ground_07.png",
-			"start":"res/image_files/ground_04.png",
+			"start":"res/image_files/brick_wall.png",
 			"block":"res/image_files/wooden_crate.png",
             "blockOnTarget":"res/image_files/wooden_crate_green.png",
-			"target":"res/image_files/red_dot.png"        	
+			"target":"res/image_files/red_dot.png",
+			"transparent":"res/image_files/transparent.png"        	
         	}, 
         "score": {
             "topScore": 0, 
@@ -500,8 +504,8 @@
 			"columns":4,
 			"keyframes":[0,4,8,12],
             "startPosition": {
-                "y": 3, 
-                "x": 3
+                "y": 2, 
+                "x": 2
             }, 
         }
     }, 
@@ -589,12 +593,13 @@
         }, 
         "tiles": {
 			"ground":"res/image_files/ground_05.png",
-			"wall":"res/image_files/ground_04.png",
+			"wall":"res/image_files/brick_wall.png",
 			"grass":"res/image_files/ground_07.png",
-			"start":"res/image_files/ground_04.png",
+			"start":"res/image_files/brick_wall.png",
 			"block":"res/image_files/wooden_crate.png",
             "blockOnTarget":"res/image_files/wooden_crate_green.png",
-			"target":"res/image_files/red_dot.png"        	
+			"target":"res/image_files/red_dot.png",
+			"transparent":"res/image_files/transparent.png"        	
         	}, 
         "score": {
             "topScore": 0, 
@@ -609,8 +614,8 @@
 			"columns":4,
 			"keyframes":[0,4,8,12],
             "startPosition": {
-                "y": 3, 
-                "x": 7
+                "y": 2, 
+                "x": 6
             }, 
         }
     }, 
@@ -698,12 +703,13 @@
         }, 
         "tiles": {
 			"ground":"res/image_files/ground_05.png",
-			"wall":"res/image_files/ground_04.png",
+			"wall":"res/image_files/brick_wall.png",
 			"grass":"res/image_files/ground_07.png",
-			"start":"res/image_files/ground_04.png",
+			"start":"res/image_files/brick_wall.png",
 			"block":"res/image_files/wooden_crate.png",
             "blockOnTarget":"res/image_files/wooden_crate_green.png",
-			"target":"res/image_files/red_dot.png"        	
+			"target":"res/image_files/red_dot.png",
+			"transparent":"res/image_files/transparent.png"        	
         	}, 
         "score": {
             "topScore": 0, 
@@ -718,8 +724,8 @@
 			"columns":4,
 			"keyframes":[0,4,8,12],
             "startPosition": {
-                "y": 5, 
-                "x": 5
+                "y": 4, 
+                "x": 4
             }, 
         }
     }, 
@@ -777,12 +783,13 @@
         }, 
         "tiles": {
 			"ground":"res/image_files/ground_05.png",
-			"wall":"res/image_files/ground_04.png",
+			"wall":"res/image_files/brick_wall.png",
 			"grass":"res/image_files/ground_07.png",
-			"start":"res/image_files/ground_04.png",
+			"start":"res/image_files/brick_wall.png",
 			"block":"res/image_files/wooden_crate.png",
             "blockOnTarget":"res/image_files/wooden_crate_green.png",
-			"target":"res/image_files/red_dot.png"        	
+			"target":"res/image_files/red_dot.png",
+			"transparent":"res/image_files/transparent.png"        	
         	}, 
         "score": {
             "topScore": 0, 
@@ -797,8 +804,8 @@
 			"columns":4,
 			"keyframes":[0,4,8,12],
             "startPosition": {
-                "y": 3, 
-                "x": 2
+                "y": 2, 
+                "x": 1
             }, 
         }
     }, 
@@ -902,12 +909,13 @@
         }, 
         "tiles": {
 			"ground":"res/image_files/ground_05.png",
-			"wall":"res/image_files/ground_04.png",
+			"wall":"res/image_files/brick_wall.png",
 			"grass":"res/image_files/ground_07.png",
-			"start":"res/image_files/ground_04.png",
+			"start":"res/image_files/brick_wall.png",
 			"block":"res/image_files/wooden_crate.png",
             "blockOnTarget":"res/image_files/wooden_crate_green.png",
-			"target":"res/image_files/red_dot.png"        	
+			"target":"res/image_files/red_dot.png",
+			"transparent":"res/image_files/transparent.png"        	
         	}, 
         "score": {
             "topScore": 0, 
@@ -922,8 +930,8 @@
 			"columns":4,
 			"keyframes":[0,4,8,12],
             "startPosition": {
-                "y": 5, 
-                "x": 3
+                "y": 4, 
+                "x": 1
             }, 
         }
     }, 
@@ -995,12 +1003,13 @@
         }, 
         "tiles": {
 			"ground":"res/image_files/ground_05.png",
-			"wall":"res/image_files/ground_04.png",
+			"wall":"res/image_files/brick_wall.png",
 			"grass":"res/image_files/ground_07.png",
-			"start":"res/image_files/ground_04.png",
+			"start":"res/image_files/brick_wall.png",
 			"block":"res/image_files/wooden_crate.png",
             "blockOnTarget":"res/image_files/wooden_crate_green.png",
-			"target":"res/image_files/red_dot.png"        	
+			"target":"res/image_files/red_dot.png",
+			"transparent":"res/image_files/transparent.png"        	
         	}, 
         "score": {
             "topScore": 0, 
@@ -1015,8 +1024,8 @@
 			"columns":4,
 			"keyframes":[0,4,8,12],
             "startPosition": {
-                "y": 7, 
-                "x": 4
+                "y": 6, 
+                "x": 3
             }, 
         }
     }, 
@@ -1128,12 +1137,13 @@
         }, 
         "tiles": {
 			"ground":"res/image_files/ground_05.png",
-			"wall":"res/image_files/ground_04.png",
+			"wall":"res/image_files/brick_wall.png",
 			"grass":"res/image_files/ground_07.png",
-			"start":"res/image_files/ground_04.png",
+			"start":"res/image_files/brick_wall.png",
 			"block":"res/image_files/wooden_crate.png",
             "blockOnTarget":"res/image_files/wooden_crate_green.png",
-			"target":"res/image_files/red_dot.png"        	
+			"target":"res/image_files/red_dot.png",
+			"transparent":"res/image_files/transparent.png"        	
         	}, 
         "score": {
             "topScore": 0, 
@@ -1148,8 +1158,8 @@
 			"columns":4,
 			"keyframes":[0,4,8,12],
             "startPosition": {
-                "y": 2, 
-                "x": 7
+                "y": 1, 
+                "x": 6
             }, 
         }
     }, 
@@ -1207,12 +1217,13 @@
         }, 
         "tiles": {
 			"ground":"res/image_files/ground_05.png",
-			"wall":"res/image_files/ground_04.png",
+			"wall":"res/image_files/brick_wall.png",
 			"grass":"res/image_files/ground_07.png",
-			"start":"res/image_files/ground_04.png",
+			"start":"res/image_files/brick_wall.png",
 			"block":"res/image_files/wooden_crate.png",
             "blockOnTarget":"res/image_files/wooden_crate_green.png",
-			"target":"res/image_files/red_dot.png"        	
+			"target":"res/image_files/red_dot.png",
+			"transparent":"res/image_files/transparent.png"        	
         	}, 
         "score": {
             "topScore": 0, 
@@ -1227,8 +1238,8 @@
 			"columns":4,
 			"keyframes":[0,4,8,12],
             "startPosition": {
-                "y": 4, 
-                "x": 3
+                "y": 3, 
+                "x": 2
             }, 
         }
     }, 
@@ -1286,12 +1297,13 @@
         }, 
         "tiles": {
 			"ground":"res/image_files/ground_05.png",
-			"wall":"res/image_files/ground_04.png",
+			"wall":"res/image_files/brick_wall.png",
 			"grass":"res/image_files/ground_07.png",
-			"start":"res/image_files/ground_04.png",
+			"start":"res/image_files/brick_wall.png",
 			"block":"res/image_files/wooden_crate.png",
             "blockOnTarget":"res/image_files/wooden_crate_green.png",
-			"target":"res/image_files/red_dot.png"        	
+			"target":"res/image_files/red_dot.png",
+			"transparent":"res/image_files/transparent.png"        	
         	}, 
         "score": {
             "topScore": 0, 
@@ -1306,8 +1318,8 @@
 			"columns":4,
 			"keyframes":[0,4,8,12],
             "startPosition": {
-                "y": 3, 
-                "x": 4
+                "y": 2, 
+                "x": 3
             }, 
         }
     }, 
@@ -1377,12 +1389,13 @@
         }, 
         "tiles": {
 			"ground":"res/image_files/ground_05.png",
-			"wall":"res/image_files/ground_04.png",
+			"wall":"res/image_files/brick_wall.png",
 			"grass":"res/image_files/ground_07.png",
-			"start":"res/image_files/ground_04.png",
+			"start":"res/image_files/brick_wall.png",
 			"block":"res/image_files/wooden_crate.png",
             "blockOnTarget":"res/image_files/wooden_crate_green.png",
-			"target":"res/image_files/red_dot.png"        	
+			"target":"res/image_files/red_dot.png",
+			"transparent":"res/image_files/transparent.png"        	
         	}, 
         "score": {
             "topScore": 0, 
@@ -1397,8 +1410,8 @@
 			"columns":4,
 			"keyframes":[0,4,8,12],
             "startPosition": {
-                "y": 5, 
-                "x": 7
+                "y": 4, 
+                "x": 6
             }, 
         }
     }, 
@@ -1462,12 +1475,13 @@
         }, 
         "tiles": {
 			"ground":"res/image_files/ground_05.png",
-			"wall":"res/image_files/ground_04.png",
+			"wall":"res/image_files/brick_wall.png",
 			"grass":"res/image_files/ground_07.png",
-			"start":"res/image_files/ground_04.png",
+			"start":"res/image_files/brick_wall.png",
 			"block":"res/image_files/wooden_crate.png",
             "blockOnTarget":"res/image_files/wooden_crate_green.png",
-			"target":"res/image_files/red_dot.png"        	
+			"target":"res/image_files/red_dot.png",
+			"transparent":"res/image_files/transparent.png"        	
         	}, 
         "score": {
             "topScore": 0, 
@@ -1482,8 +1496,8 @@
 			"columns":4,
 			"keyframes":[0,4,8,12],
             "startPosition": {
-                "y": 3, 
-                "x": 7
+                "y": 2, 
+                "x": 6
             }, 
         }
     }, 
@@ -1555,12 +1569,13 @@
         }, 
         "tiles": {
 			"ground":"res/image_files/ground_05.png",
-			"wall":"res/image_files/ground_04.png",
+			"wall":"res/image_files/brick_wall.png",
 			"grass":"res/image_files/ground_07.png",
-			"start":"res/image_files/ground_04.png",
+			"start":"res/image_files/brick_wall.png",
 			"block":"res/image_files/wooden_crate.png",
             "blockOnTarget":"res/image_files/wooden_crate_green.png",
-			"target":"res/image_files/red_dot.png"        	
+			"target":"res/image_files/red_dot.png",
+			"transparent":"res/image_files/transparent.png"        	
         	}, 
         "score": {
             "topScore": 0, 
@@ -1575,8 +1590,8 @@
 			"columns":4,
 			"keyframes":[0,4,8,12],
             "startPosition": {
-                "y": 4, 
-                "x": 5
+                "y": 3, 
+                "x": 4
             }, 
         }
     }, 
@@ -1664,12 +1679,13 @@
         }, 
         "tiles": {
 			"ground":"res/image_files/ground_05.png",
-			"wall":"res/image_files/ground_04.png",
+			"wall":"res/image_files/brick_wall.png",
 			"grass":"res/image_files/ground_07.png",
-			"start":"res/image_files/ground_04.png",
+			"start":"res/image_files/brick_wall.png",
 			"block":"res/image_files/wooden_crate.png",
             "blockOnTarget":"res/image_files/wooden_crate_green.png",
-			"target":"res/image_files/red_dot.png"        	
+			"target":"res/image_files/red_dot.png",
+			"transparent":"res/image_files/transparent.png"
         	}, 
         "score": {
             "topScore": 0, 
@@ -1684,8 +1700,8 @@
 			"columns":4,
 			"keyframes":[0,4,8,12],
             "startPosition": {
-                "y": 3, 
-                "x": 11
+                "y": 2, 
+                "x": 10
             }, 
         }
     }

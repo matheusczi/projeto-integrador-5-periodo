@@ -8,6 +8,8 @@ import objects.Hero;
 import objects.ObjectBase;
 import buttons.Button;
 import buttons.actions.GoToMenuSurrending;
+import buttons.actions.GoToProgress;
+import buttons.actions.levels.GoToLevel;
 
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -26,18 +28,26 @@ public class CanvasGame extends CanvasBase{
 	private int steps = 0;
 	private int moves = 0;
 	
+	private Button retryButton = null;
+	
 	private BitmapFont font;
 	
 	public CanvasGame(CanvasController controller){
 		super(controller);
 		drawables = new ArrayList<ObjectBase>();
 		
-		drawables.add(new Button(new GoToMenuSurrending(controller), controller.getButtonTexture14(), controller.getButtonTexture13(), new Rectangle(Main.width - 150, Main.height - 80, 50, 50)));
+		drawables.add(new Button(new GoToProgress(controller), controller.getButtonTexture14(), controller.getButtonTexture13(), new Rectangle(Main.width - 150, Main.height - 80, 50, 50)));
 		font = new BitmapFont();
+
+
 	}
 	
 	public void setLevel(Level level){
 		this.level = level;
+		if(retryButton!=null)
+			drawables.remove(retryButton);
+		retryButton = new Button(new GoToLevel(controller, "Retry", level.getName(), "res/data/levels.json"), controller.getButtonTexture14(), controller.getButtonTexture13(), new Rectangle(Main.width - 150, Main.height - 160, 50, 50));
+		drawables.add(retryButton);
 	}
 	
 	@Override

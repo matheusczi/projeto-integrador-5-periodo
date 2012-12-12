@@ -15,4 +15,8 @@ public class GoToProgress extends Actionable{
 		controller.setCanvasByName(CanvasController.CANVAS_PROGRESS);
 		super.action();
 	}
+	
+	public void setName(String name){
+		this.text = name;
+	}
 }

@@ -11,8 +11,10 @@ import buttons.actions.GoToMenuSurrending;
 import buttons.actions.GoToProgress;
 import buttons.actions.levels.GoToLevel;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.stbtt.TrueTypeFontFactory;
 
 import core.Main;
 
@@ -32,12 +34,16 @@ public class CanvasGame extends CanvasBase{
 	
 	private BitmapFont font;
 	
+	public static final String FONT_CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789][_!$%#@|\\/?-+=()*&.;,{}\"�`'<>";
+	
 	public CanvasGame(CanvasController controller){
 		super(controller);
 		drawables = new ArrayList<ObjectBase>();
 		
-		drawables.add(new Button(new GoToProgress(controller), controller.getButtonTexture14(), controller.getButtonTexture13(), new Rectangle(Main.width - 150, Main.height - 80, 50, 50)));
-		font = new BitmapFont();
+		Button b = new Button(new GoToProgress(controller), controller.getButtonTexture14(), controller.getButtonTexture13(), new Rectangle(Main.width - 170, Main.height - 80, 50, 50));
+		b.action.setName("Surrender");
+		drawables.add(b);
+		font = TrueTypeFontFactory.createBitmapFont(Gdx.files.internal("res/font/Capture it.ttf"), FONT_CHARACTERS, 21.0f, 15.0f, 0.5f, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
 
 	}
@@ -46,7 +52,7 @@ public class CanvasGame extends CanvasBase{
 		this.level = level;
 		if(retryButton!=null)
 			drawables.remove(retryButton);
-		retryButton = new Button(new GoToLevel(controller, "Retry", level.getName(), "res/data/levels.json"), controller.getButtonTexture14(), controller.getButtonTexture13(), new Rectangle(Main.width - 150, Main.height - 160, 50, 50));
+		retryButton = new Button(new GoToLevel(controller, "Retry", level.getName(), "res/data/levels.json"), controller.getButtonTexture14(), controller.getButtonTexture13(), new Rectangle(Main.width - 170, Main.height - 160, 50, 50));
 		drawables.add(retryButton);
 	}
 	

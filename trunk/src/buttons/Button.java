@@ -15,14 +15,14 @@ import com.badlogic.gdx.graphics.g2d.stbtt.TrueTypeFontFactory;
 import core.Main;
 
 public class Button extends ObjectBase{
-	private Actionable action;
+	public Actionable action;
 	private Texture background;
 	private Texture hover;
 	private Texture activeTexture;
 	private boolean executeAction;
 	private boolean touchHover;
 	BitmapFont font;
-	public static final String FONT_CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789][_!$%#@|\\/?-+=()*&.;,{}\"´`'<>";
+	public static final String FONT_CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789][_!$%#@|\\/?-+=()*&.;,{}\"ï¿½`'<>";
 	
 	public Button(Actionable action, Texture background, Texture hover, Rectangle bounds){
 		this.action = action;

@@ -14,4 +14,8 @@ public class Actionable{
 	public CharSequence getText(){
 		return text;
 	}
+
+	public void setName(String name){
+		text = name;
+	}
 }
